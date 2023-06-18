@@ -10,7 +10,8 @@
  **/
 
 const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
-const { TelegraPh } = require('../lib/scraper')   
+const { TelegraPh } = require('../lib/scraper') 
+const Config = require('../config')  
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
@@ -259,7 +260,7 @@ _Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
-                    url: await botpic(),
+                    url: THUMB_IMAGE,
                 },
                 caption: alivtxt,
                 footer: tlang().footer,
