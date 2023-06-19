@@ -8,10 +8,9 @@
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
-
+require('../config')
 const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
-const { TelegraPh } = require('../lib/scraper') 
-const Config = require('../config')  
+const { TelegraPh } = require('../lib/scraper')   
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
