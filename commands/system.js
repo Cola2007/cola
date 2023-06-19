@@ -8,7 +8,6 @@
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
-require('../config')
 const { addnote,cmd, sck1, delnote, allnotes, delallnote, tlang, botpic, runtime, prefix, Config } = require('../lib')
 const { TelegraPh } = require('../lib/scraper')   
 //---------------------------------------------------------------------------
@@ -258,7 +257,9 @@ _Type ${prefix}menu for my command list._
 _Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
-                image: {url:Config.THUMB_IMAGE},
+                image: {
+                 url:  await botpic(),
+                       },
                 caption: alivtxt,
                 footer: tlang().footer,
                 headerType: 4,
