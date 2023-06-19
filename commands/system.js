@@ -260,7 +260,7 @@ _Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
-                    url: THUMB_IMAGE,
+                    url: Config.THUMB_IMAGE,
                 },
                 caption: alivtxt,
                 footer: tlang().footer,
