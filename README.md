@@ -33,7 +33,7 @@ Blue Lion whatsapp bot is,
  
 ### 📸 ＳＣＡＮ ＱＲ ＣＯＤＥ 📸
  
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://nipuna15.github.io/)
+## [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://nipuna15.github.io/)
 
 
 
