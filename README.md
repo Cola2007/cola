@@ -11,7 +11,7 @@
 
    <p align="center">
 <a href="https://github.com/nipuna15">
-    <img src="https://i.ibb.co/n0DTPxs/Whats-App-Image-2023-06-16-at-15-06-03.jpg" width="100px">
+    <img src="https://i.ibb.co/n0DTPxs/Whats-App-Image-2023-06-16-at-15-06-03.jpg" width="700px">
   </a>
   
 
