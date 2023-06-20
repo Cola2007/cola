@@ -27,15 +27,13 @@ Blue Lion whatsapp bot is,
  ### FORK BLUE LION REPO
        
 ●.  ***Click👉 [FORK](https://github.com/akiyabota)***
-    
- <p align="left">
-<a href="https://github.com/akiyabota"><img align="center" src="https://i.ibb.co/n0DTPxs/Whats-App-Image-2023-06-16-at-15-06-03.jpg" alt="Fork and deploy" height="35" width="150" /></a>   
+       
     
   
  
 ### 📸 ＳＣＡＮ ＱＲ ＣＯＤＥ 📸
  
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@shashikabot/HumblePastelOrganization)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://nipuna15.github.io/)
 
 
 
@@ -54,7 +52,7 @@ Blue Lion whatsapp bot is,
 <a href="https://app.uffizzi.com/projects"><img src="https://telegra.ph/file/e464e609e43eb3dfdc144.png" alt="Deploy on Railway" width="170px"></a>
 </p>
  
- [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/github/mrhansamala/-Queen-Nethu-MD-Bot-)
+ [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://repl.it/github/nipuna15/Secktor-Md)
     
    ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=008000&lines=HOW+TO+DEVOLP+BY;MADE+BY+CYBER+TECH+TEAM..)](https://git.io/typing-svg)
    
