@@ -69,8 +69,6 @@ Blue Lion whatsapp bot is,
 
 * [🧑‍💻 Join Blue Lion Support Group 🧑‍💻](https://chat.whatsapp.com/BbIpvkRD4qP6xKckb8cpT0)
 
-     
- #      ⚠️ We are not responsible for any inconvenience caused by your mistakes!   | ඔබගේ අත්වැරදීම් නිසා සිදුවන අපහසුතාවයන් සඳහා අප වගකිවයනු නොලැබේ !
 
 <br>
 <div>
