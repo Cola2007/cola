@@ -10,8 +10,8 @@
 ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F00&lines=WELCOME+TO+BLUE+LION+WHATSAPP+BOT;MADE+BY+CYBER+TECH+TEAM)](https://git.io/typing-svg)
 
    <p align="center">
-<a href="https://github.com">
-    <img src="https://i.ibb.co/n0DTPxs/Whats-App-Image-2023-06-16-at-15-06-03.jpg">
+<a href="https://github.com/nipuna15">
+    <img src="https://i.ibb.co/n0DTPxs/Whats-App-Image-2023-06-16-at-15-06-03.jpg" width="1000px">
   </a>
   
 
