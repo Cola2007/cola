@@ -6,8 +6,8 @@
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Moxie ",
-                "stop": "pm2 stop Moxie "
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Moxie",
+                "stop": "pm2 stop Moxie"
                 },
                "author": "moxie",
               "dependencies": {
@@ -31,8 +31,7 @@
                        "mumaker": "^1.0.0",
                        "google-it": "^1.6.2",
                        "file-type": "^16.5.3",
-                       "fb-Info-Video":
-"latest",
+                       "fb-Info-Video":"latest",
                        "form-data": "^4.0.0",
                        "ffmpeg": "^0.0.4",
                        "fluent-ffmpeg": "^2.1.2",
