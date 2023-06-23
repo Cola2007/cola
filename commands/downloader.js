@@ -9,11 +9,102 @@
 
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
 const { mediafire } = require("../lib/mediafire.js");
+const cheerio = require('cheerio');
+const fbInfoVideo = require('fb-info-video');
+const axios= require('axios');
 const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
+//---------------------------------------------------------------------------
+async function tiktokdl (url) {
+    const gettoken = await axios.get("https://tikdown.org/id");
+    const $ = cheerio.load(gettoken.data);
+    const token = $("#download-form > input[type=hidden]:nth-child(2)").attr("value");
+    const param = {
+        url: url,
+        _token: token,
+    };
+    const { data } = await axios.request("https://tikdown.org/getAjax?", {
+        method: "post",
+        data: new URLSearchParams(Object.entries(param)),
+        headers: {
+            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "user-agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36",
+        },
+    });
+    var getdata = cheerio.load(data.html);
+    if (data.status) {
+        return {
+            status: true,
+            thumbnail: getdata("img").attr("src"),
+            video: getdata("div.download-links > div:nth-child(1) > a").attr("href"),
+            audio: getdata("div.download-links > div:nth-child(2) > a").attr("href"),
+        };
+    } else return { status: false };
+};
+
+//---------------------------------------------------------------------------
+
+cmd({
+            pattern: "facebook",
+	    alias :  ['fb','fbdl'],
+            desc: "Downloads fb videos  .",
+            category: "downloader",
+            filename: __filename,
+            use: '<add fb url.>'
+        },
+
+        async(Void, citel, text) => {
+if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`);
+fbInfoVideo.getInfo(text)
+  .then(info =>{
+let vurl=info.video.url_video;
+
+      let data  ="*Video Name     :* "+  info.video.title;
+          data +="\n*Video Views    :* "+  info.video.view;
+          data +="\n*Video Comments :* "+  info.video.comment;
+          data +="\n*Video Likes    :* "+info.video.reaction.Like ;
+  
+                        let buttonMessage = {
+                        video: {url:vurl},
+                        mimetype: 'video/mp4',
+                        fileName: info.video.title+`.mp4`,
+                        caption :"     *FACEBOOK DOWNLOADER*  \n"+data
+                        
+                    }
+                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+
+
+
+})
+  .catch(err =>{
+            citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*");
+            console.error(err);
+          })
+ })
+
+//---------------------------------------------------------------------------
+
+cmd({
+            pattern: "tiktok",
+	          alias :  ['tt','ttdl'],
+            desc: "Downloads Tiktok Videos Via Url.",
+            category: "downloader",
+            filename: __filename,
+            use: '<add tiktok url.>'
+        },
+
+        async(Void, citel, text) => {
+ if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`);
+ let txt = text ? text.split(" ")[0]:'';
+ if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`);
+ const { status ,thumbnail, video, audio } = await tiktokdl(txt)
+ //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
+ if (status) return await Void.sendMessage(citel.chat, {video : {url : video } ,  } , {quoted : citel });
+ else return await citel.reply("Error While Downloading Your Video") 
+})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tgs",
