@@ -241,20 +241,20 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
 _This is  ${tlang().title}._
 ${alivemessage}
 
-🍧Version:-* _0.0.7_
-🆙Uptime:-* _${runtime(process.uptime())}_
-👤Owner:-* _${Config.ownername}_
-🎧Branch:-* _${Config.BRANCH}_
+🍧Version:-* 0.0.2
+🆙Uptime:-* ${runtime(process.uptime())}
+👤Owner:-* ${Config.ownername}
+🎧Branch:-* ${Config.BRANCH}
 
-_Type ${prefix}menu for my command list._
+●Type ${prefix}menu for my command list.
 
-_Powered by ${Config.ownername}_
+📗Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
