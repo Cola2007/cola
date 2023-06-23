@@ -54,6 +54,20 @@ cmd({
         }
 
     )
+//---------------------------------------------------------------------------
+cmd({
+            pattern: "apk",
+            desc: "Downloads apk.",
+            category: "downloader",
+            filename: __filename,
+            use: '<app id>',
+        },
+        async(Void, citel, text) => {
+            if (!text) return citel.reply(`Example: ${prefix}apk com.whatsapp`)
+          const appurl = 'https://d.apkpure.com/b/apk/'+text+'?version=latest'
+            return Void.sendMessage(citel.chat, { document: { url: appurl }, fileName: text + '.apk', mimetype: 'application/pdf' }, { quoted: citel })
+        }
+    )
     //---------------------------------------------------------------------------
 cmd({
             pattern: "video",
