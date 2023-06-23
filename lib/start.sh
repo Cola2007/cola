@@ -1,5 +1,5 @@
 while true
 do
-echo "Starting Secktor-Md..."
+echo "Starting Blue-Lion..."
 node lib/client.js
 done
