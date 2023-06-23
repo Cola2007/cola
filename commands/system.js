@@ -252,7 +252,7 @@ ${alivemessage}
 👤Owner:-* ${Config.ownername}
 🎧Branch:-* ${Config.BRANCH}
 
-●Type ${prefix}menu for my command list.
+● Type ${prefix}menu for my command list.
 
 📗Powered by ${Config.ownername}`;
             let aliveMessage = {
