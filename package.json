@@ -6,8 +6,8 @@
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name moxie",
-                "stop": "pm2 stop moxie"
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Secktor",
+                "stop": "pm2 stop Secktor"
                 },
                "author": "moxie",
               "dependencies": {
