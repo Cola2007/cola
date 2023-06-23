@@ -8,14 +8,14 @@
 ┈┃╰━━╲▕╲╱▏╱━━━┬╨╮
 ┈╰━━╮┊▕╱╲▏┊╭━━┴╥╯
 //--------------------------------------------------------------------\\
-  Copyright (C) 2023. 
+/**  Copyright (C) 2023. 
   Licensed under the  GPL-3.0 License; 
   You may not use this file except in compliance with the License. 
   It is supplied in the hope that it may be useful. 
   * @project_name : Blue_Lion_Bot 
   * @author : nipuna rangana
   * @description : Blue-Lion,A Multi-functional whatsapp bot. 
-  * @version 0.0.6 
+  * @version 0.0.6 **\
 //--------------------------------------------------------------------\\
 
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
