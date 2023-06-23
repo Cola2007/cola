@@ -31,6 +31,8 @@
                        "mumaker": "^1.0.0",
                        "google-it": "^1.6.2",
                        "file-type": "^16.5.3",
+                       "fbInfoVideo":
+"latest",
                        "form-data": "^4.0.0",
                        "ffmpeg": "^0.0.4",
                        "fluent-ffmpeg": "^2.1.2",
