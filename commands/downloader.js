@@ -15,8 +15,8 @@
   * @project_name : Blue_Lion_Bot 
   * @author : nipuna rangana
   * @description : Blue-Lion,A Multi-functional whatsapp bot. 
-  * @version 0.0.6 **\
-//--------------------------------------------------------------------\\
+  * @version 0.0.6 **/
+//-------------------------------------------------------------------\\
 
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
 const { mediafire } = require("../lib/mediafire.js");
