@@ -244,7 +244,7 @@ cmd({
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-_This is  ${tlang().title}._
+This is  ${tlang().title}.
 ${alivemessage}
 
 🍧Version:-* 0.0.2
@@ -254,8 +254,7 @@ ${alivemessage}
 
 ●Type ${prefix}menu for my command list.
 
-📗Powered by ${Config.ownername}_
-`;
+📗Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
