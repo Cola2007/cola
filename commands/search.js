@@ -177,7 +177,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: `_Sector Image Search_\n*${name1}*`,
+                        caption: `_Blue-Lion Image Search_\n*${name1}*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
