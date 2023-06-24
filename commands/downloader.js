@@ -157,7 +157,10 @@ cmd({
                 let fileSizeInBytes = stats.size;
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
-                 Void.sendMessage(citel.chat, {document : fs.statSync(`./${appname}`), { quoted: citel })
+                 Void.sendMessage(citel.chat, {document : fs.statSync(`./${appname}`),
+fileName: appname,
+mimetype: application/pdf,
+}, { quoted: citel })
                  return fs.unlinkSync(`./${appname}`);
                 } else {
                     citel.reply(`❌ File size bigger than 1000mb.`);
