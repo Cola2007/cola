@@ -147,8 +147,8 @@ cmd({
           const appname = getRandom(".apk");
           const appurl = 'https://d.apkpure.com/b/apk/'+text+'?version=latest'
           const stream = fs.createWriteStream(`./${appname}`);
-	citel.reply('*Downloadig:* '+text+'.apk')
-       request(appurl).pipe(Stream);
+          request(appurl).pipe(stream);
+	  citel.reply('*Downloadig:* '+text+'.apk')
             await new Promise((resolve, reject) => {
                     stream.on("error", reject);
                     stream.on("finish", resolve);
@@ -158,11 +158,11 @@ cmd({
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
                  Void.sendMessage(citel.chat, {document : fs.statSync(`./${appname}`), { quoted: citel })
-                 return fs.unlinkSync(`./${randomName}`);
+                 return fs.unlinkSync(`./${appname}`);
                 } else {
                     citel.reply(`❌ File size bigger than 1000mb.`);
                 }
-                return fs.unlinkSync(`./${randomName}`);      
+                return fs.unlinkSync(`./${appname}`);      
 
 
         }
