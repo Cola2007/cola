@@ -9,6 +9,7 @@
 
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
 const { mediafire } = require("../lib/mediafire.js");
+const{appkdl} =require("../lib/apk-dl.js");
 const cheerio = require('cheerio');
 const fbInfoVideo = require('fb-info-video');
 const request = require('request');
@@ -167,28 +168,10 @@ cmd({
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Example: ${prefix}apk com.whatsapp`)
           const appname = 'text+".apk"' ;
-          const appurl = 'https://d.apkpure.com/b/APK/'+text+'?version=latest';
-          const stream = fs.createWriteStream(`./${appname}`);
-          request(appurl).pipe(stream);
-	  citel.reply('*Downloadig:* '+text+'.apk')
-            await new Promise((resolve, reject) => {
-                    stream.on("error", reject);
-                    stream.on("finish", resolve);
-                });
-                let stats = fs.statSync(`./${appname}`);
-                let fileSizeInBytes = stats.size;
-                let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-                if (fileSizeInMegabytes <= dlsize) {
-                 Void.sendMessage(citel.chat, {document : fs.statSync(`./${appname}`),
+		await apkdl.searchApk(appname);
+                 Void.sendMessage(citel.chat, {document : {url:result.url_download},
 fileName: appname,
-mimetype: "application/vnd.android.package-archive",
-}, { quoted: citel })
-                 return fs.unlinkSync(`./${appname}`);
-                } else {
-                    citel.reply(`❌ File size bigger than 1000mb.`);
-                }
-                return fs.unlinkSync(`./${appname}`);      
-
+mimetype: "application/vnd.android.package-archive",}, { quoted: citel })
 
         }
     )
