@@ -64,14 +64,9 @@ async function ig(linak){
   const desc2 = $('#article-phara').text() 
 let [desc, desca] = desc2.split `window.`;
     const title = $('body > div:nth-child(14) > center > h1').text()
-  console.log({
-    link,
-    img,
-    title,
-    desc
-  })
   })}
-await Void.sendMessage(citel.chat,{image:{url:img}, caption: title /n/n desc /n link }) 
+	var mm = `${title} \n ${desc} \n\n ${link}`;
+await Void.sendMessage(citel.chat,{image:{url:img}, caption: mm}) 
 });
 //---------------------------------------------------------------------------
 
