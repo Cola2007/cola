@@ -75,7 +75,6 @@ cmd({
 	    alias :  ['fb','fbdl'],
             desc: "Downloads fb videos  .",
             category: "downloader",
-            react: "📵",
             filename: __filename,
             use: '<add fb url.>'
         },
@@ -118,7 +117,6 @@ cmd({
             category: "downloader",
             filename: __filename,
             use: '<add tiktok url.>'
-            react: "📽️",
         },
 
         async(Void, citel, text) => {
@@ -163,7 +161,6 @@ cmd({
             pattern: "apk",
             desc: "Downloads apk.",
             category: "downloader",
-            react: "📤",
             filename: __filename,
             use: '<app id>',
         },
@@ -200,7 +197,6 @@ cmd({
             pattern: "video",
             desc: "Downloads video from yt.",
             category: "downloader",
-            react: "🎬",
             filename: __filename,
             use: '<faded-Alan Walker>',
         },
@@ -359,7 +355,6 @@ cmd({
             pattern: "mediafire",
             desc: "Downloads zip from Mediafire.",
             category: "downloader",
-            react: "📤",
             filename: __filename,
             use: '<url of mediafire>',
         },
@@ -393,7 +388,6 @@ cmd({
             alias :['song'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
-            react: "🎧",
             filename: __filename,
             use: '<text>',
         },
@@ -458,7 +452,6 @@ cmd({
             desc: "Downloads video from youtube.",
             category: "downloader",
             filename: __filename,
-            react: "🎬",
             use: '<yt video url>',
         },
         async(Void, citel, text) => {
@@ -526,7 +519,6 @@ cmd({
         pattern: "ytmp3",
         desc: "Downloads audio by yt link.",
         category: "downloader",
-        react: "🎧",
         use: '<yt video url>',
     },
     async(Void, citel, text) => {
@@ -603,7 +595,6 @@ cmd({
         pattern: "ytdoc",
         desc: "Downloads audio by yt link as document.",
         category: "downloader",
-        react: "📤",
         use: '<ytdoc video url>',
     },
     async(Void, citel, text) => {
