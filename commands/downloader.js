@@ -159,7 +159,7 @@ cmd({
                 if (fileSizeInMegabytes <= dlsize) {
                  Void.sendMessage(citel.chat, {document : fs.statSync(`./${appname}`),
 fileName: appname,
-mimetype: application/pdf,
+mimetype: application/vnd.android.package-archive,
 }, { quoted: citel })
                  return fs.unlinkSync(`./${appname}`);
                 } else {
