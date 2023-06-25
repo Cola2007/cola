@@ -206,7 +206,7 @@ return new Promise((resolve, reject) => {
                         result: result
                     })
                }).catch(reject)
-     })                 Void.sendMessage(citel.chat, {document : {url: url_download,},
+     })                 Void.sendMessage(citel.chat, {document : { url: url_download[i],},
 fileName: apkname,
 mimetype: "application/vnd.android.package-archive",}, { quoted: citel })
 
