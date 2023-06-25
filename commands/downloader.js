@@ -60,12 +60,12 @@ async function ig(linak){
   const link = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.middle > a:nth-child(1)').attr('href')  
   const img = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.left > div > a > img').attr('src') 
   const scrape2 = await axios.get(link)
-  const $ = cheerio.load(scrape2.data)
-  const desc2 = $('#article-phara').text() 
+  const $i = cheerio.load(scrape2.data)
+  const desc2 = $i('#article-phara').text() 
 let [desc, desca] = desc2.split `window.`;
-    const title = $('body > div:nth-child(14) > center > h1').text()
+    const titl = $i('body > div:nth-child(14) > center > h1').text()
   })}
-	var mm = `${title} \n ${desc} \n\n ${link}`;
+	var mm = `${titl} \n ${desc} \n\n ${link}`;
 await Void.sendMessage(citel.chat,{image:{url:img}, caption: mm}) 
 });
 //---------------------------------------------------------------------------
@@ -125,7 +125,7 @@ cmd({
  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`);
  const { status ,thumbnail, video, audio } = await tiktokdl(txt)
  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
- if (status) return await Void.sendMessage(citel.chat, {video : {url : video } ,  } , {quoted : citel });
+ if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
  else return await citel.reply("Error While Downloading Your Video") 
 })
     //---------------------------------------------------------------------------
