@@ -144,8 +144,8 @@ cmd({
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Example: ${prefix}apk com.whatsapp`)
-          const appname = getRandom(".apk");
-          const appurl = 'https://d.apkpure.com/b/apk/'+text+'?version=latest'
+          const appname = 'text+".apk"' ;
+          const appurl = 'https://d.apkpure.com/b/apk/'+text+'?version=latest';
           const stream = fs.createWriteStream(`./${appname}`);
           request(appurl).pipe(stream);
 	  citel.reply('*Downloadig:* '+text+'.apk')
