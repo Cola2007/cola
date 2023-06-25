@@ -167,10 +167,47 @@ cmd({
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Example: ${prefix}apk com.whatsapp`)
-          const appname = 'text+".apk"' ;
-		await apkdl.searchApk(appname);
-                 Void.sendMessage(citel.chat, {document : {url:result.url_download},
-fileName: appname,
+          const apkname = 'text+".apk"' ;
+return new Promise((resolve, reject) => {
+          axios.get(`https://rexdl.com/?s=${apkname}`)
+               .then(({ data }) => {
+                    const $ = cheerio.load(data)
+                    let name = []
+                    let url = []
+                    let url_download = []
+                    let thumb = []
+                    let desc = []
+                    $('h2.post-title > a').get().map((rest) => {
+                         name.push($(rest).text())
+                    })
+                    $('div > div.post-thumbnail > a').get().map((rest) => {
+                         url.push($(rest).attr('href'))
+                    })
+                    $('div > div.post-thumbnail > a').get().map((rest) => {
+                         url_download.push('https://rexdlfile.com/index.php?id=' + $(rest).attr('href').split('/')[4].replace('.html', ''))
+                    })
+                    $('div > div.post-thumbnail > a > img').get().map((rest) => {
+                         thumb.push($(rest).attr('data-src'))
+                    })
+                    $('div.entry.excerpt > p').get().map((rest) => {
+                         desc.push($(rest).text())
+                    })
+                    let result = []
+                    for (let i = 0; i < name.length; i++) {
+                         result.push({
+                              title: name[i],
+                              thumb: thumb[i],
+                              url: url[i],
+                              url_download: url_download[i],
+                              desc: desc[i]
+                         })
+                    }
+                    resolve({
+                        result: result
+                    })
+               }).catch(reject)
+     })                 Void.sendMessage(citel.chat, {document : {url:result.url_download},
+fileName: apkname,
 mimetype: "application/vnd.android.package-archive",}, { quoted: citel })
 
         }
