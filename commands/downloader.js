@@ -456,7 +456,7 @@ cmd({
 cmd({
             pattern: "ytmp4",
             desc: "Downloads video from youtube.",
-            category: "downloader"
+            category: "downloader",
             filename: __filename,
             react: "🎬",
             use: '<yt video url>',
@@ -526,6 +526,7 @@ cmd({
         pattern: "ytmp3",
         desc: "Downloads audio by yt link.",
         category: "downloader",
+        react: "🎧",
         use: '<yt video url>',
     },
     async(Void, citel, text) => {
@@ -602,6 +603,7 @@ cmd({
         pattern: "ytdoc",
         desc: "Downloads audio by yt link as document.",
         category: "downloader",
+        react: "📤",
         use: '<ytdoc video url>',
     },
     async(Void, citel, text) => {
