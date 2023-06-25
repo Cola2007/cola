@@ -238,7 +238,6 @@ cmd({
             pattern: "alive",
             category: "general",
             filename: __filename,
-            react: "💕",
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
