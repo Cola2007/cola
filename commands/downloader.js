@@ -56,7 +56,7 @@ cmd({
 	let other = []
 async function ig(linak){
   return new Promise(async (resolve, reject) => {
-  const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`)
+  const scrape = await axios.get(`https://www.hirunews.lk/`)
   const $g = cheerio.load(scrape.data)
   const link = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.middle > a:nth-child(1)').attr('href')  
   const img = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.left > div > a > img').attr('src') 
