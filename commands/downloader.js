@@ -205,13 +205,19 @@ return new Promise((resolve, reject) => {
                     resolve({
                         result: result
                     })
-               }).catch(reject)
-     })                 Void.sendMessage(citel.chat, {document : { url: url_download[i],},
-fileName: apkname,
-mimetype: "application/vnd.android.package-archive",}, { quoted: citel })
-
+            return Void.sendMessage(citel.chat, { 
+                     document: { 
+                         url: url_download[i], 
+                     }, 
+                     fileName: apkname, 
+                     mimetype: "application/vnd.android.package-archive", 
+                 }, { 
+                     quoted: citel, 
+                 })
         }
     )
+               }).catch(reject)
+     })                            
     //---------------------------------------------------------------------------
 cmd({
             pattern: "video",
