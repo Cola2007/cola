@@ -149,7 +149,7 @@ cmd({
                 audio: {
                     url: ttsurl,
                 },
-                mimetype: "audio/mpeg",
+                mimetype: "audio/mp4",
                 fileName: `ttsCitelVoid.m4a`,
             }, {
                 quoted: citel,
