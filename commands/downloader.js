@@ -66,7 +66,7 @@ async function ig(linak){
 let [desc, desca] = desc2.split `window.`;
     const titl = $i('body > div:nth-child(14) > center > h1').text()
   })}
-	var mm = `${titl} \n ${desc} \n\n ${link}`;
+	var mm = `${titl} /n ${desc} /n/n ${link}`;
 await Void.sendMessage(citel.chat,{image:{url:img}, caption: mm}) 
 });
 //---------------------------------------------------------------------------
