@@ -58,13 +58,13 @@ async function ig(linak){
   return new Promise(async (resolve, reject) => {
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`)
   const $g = cheerio.load(scrape.data)
-  const link = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.middle > a:nth-child(1)').attr('href')  
-  const img = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.left > div > a > img').attr('src') 
+  const link = $g('/html/body/div[9]/div[1]/div[1]/div/div[2]/div[2]/div[1]/a[1]').attr('href')  
+  const img = $g('/html/body/div[9]/div[1]/div[1]/div/div[2]/div[1]/div/a/img).attr('src') 
   const scrape2 = await axios.get(link)
   const $i = cheerio.load(scrape2.data)
-  const desc2 = $i('#article-phara').text() 
+  const desc2 = $i('//*[@id="article-phara2"]').text() 
 let [desc, desca] = desc2.split `window.`;
-    const titl = $i('body > div:nth-child(14) > center > h1').text()
+    const titl = $i('/html/body/div[9]/center/h1').text()
   })}
 	var mm = '${titl} /n ${desc} /n/n ${link}';
 await Void.sendMessage(citel.chat,{image:{url:img}, caption: mm}) 
