@@ -89,6 +89,13 @@ cmd({
 	let other = []
 async function ig(linak){
   return new Promise(async (resolve, reject) => {
+    const reactionMessage = {
+        react: {
+            text: "💖", // use an empty string to remove the reaction
+            key: message.key
+        }
+    }
+  await Void.sendMessage(citel.chat, reactionMessage)
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
   const $g = cheerio.load(scrape.data)
   const link = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[2]/div[1]/a[1]").attr("href"); 
