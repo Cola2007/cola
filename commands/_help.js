@@ -48,6 +48,7 @@ Secktor.cmd({
                 moment.tz.setDefault('Asia/KOLKATA')
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername.split(' ')
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
@@ -55,11 +56,11 @@ Secktor.cmd({
 │ │ 👤User:- ${citel.pushName}
 │ │ 💝Theme:- ${tlang().title}
 │ │ 🍧Prefix:- [ ${prefix} ]
-│ │ 🎧Owner:- ${Config.ownername}
+│ │ 🎧Owner:- ${vdf}
 │ │ 🎵Plugins:- ${commands.length}
 │ │ 🧓Users:- ${total}
 │ │ 🆙Uptime:- ${runtime(process.uptime())}
-│ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+│ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}
 │ │ ☯️Time:- ${time}
 │ │ ❣️Date:- ${date}
 │ ╰──────●💕●──────»
@@ -98,6 +99,7 @@ Secktor.cmd({
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
+            const vdf = Config.ownername.split(' ')
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += '```' + `
@@ -105,18 +107,17 @@ Secktor.cmd({
 ┃ ☀│ 👤User: ${citel.pushName}
 ┃ ☀│ ❤️Theme: ${tlang().title}
 ┃ ☀│ 🎵Prefix: ${prefix}
-┃ ☀│ 🎧Owner: ${Config.ownername}
+┃ ☀│ 🎧Owner: ${vdf}
 ┃ ☀│ 🍧Commands: ${commands.length}
 ┃ ☀│ 💝Uptime: ${runtime(process.uptime())}
-┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃   │  
+┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}
 ┃   ╰───────────
 ╰━━━━━━━━━━━──⊷\n` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
      str += `📗 ${fancytext(commands[i].pattern,1)}\n` 
-     str += `🍁 ${commands[i].desc,1}\n\n`
+     str += `🍁 ${(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
