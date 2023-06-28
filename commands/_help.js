@@ -118,8 +118,8 @@ Secktor.cmd({
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str +=       `📗 ${fancytext(commands[i].pattern,1)}\n\n` 
-     str += `🖋️ ${fancytext(commands[i].desc,1)}\n\n`
+     str += `📗 ${fancytext(commands[i].pattern,1)}\n` 
+     str += `🍧 ${fancytext(commands[i].desc,1)}\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
@@ -129,7 +129,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "📀",
+        react: "🍧",
         filename: __filename
     },
     async(Void, citel) => {
