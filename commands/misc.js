@@ -509,3 +509,15 @@ catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
          })
      }
  })
+ //---------------------------------------------------------------------------
+ //**cmd({ on: "voice" }, async(Void, citel, text) => {
+    //if (Config.autovoice === 'true') {
+    //const urlk =''
+        //await Void.sendMessage(
+           // citel.chat, 
+      //      { audio: { url: urlk }, mimetype: 'audio/mp4' }
+       // )
+        
+//    }
+//})**\\
+

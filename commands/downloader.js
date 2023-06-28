@@ -89,23 +89,16 @@ cmd({
 	let other = []
 async function ig(linak){
   return new Promise(async (resolve, reject) => {
-    const reactionMessage = {
-        react: {
-            text: "💖", // use an empty string to remove the reaction
-            key: message.key
-        }
-    }
   await Void.sendMessage(citel.chat, reactionMessage)
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
   const $g = cheerio.load(scrape.data)
-  const link = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[2]/div[1]/a[1]").attr("href"); 
-  const ig1 = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[1]/div/a/img").attr("src"); 
+  const link = $g("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href"); 
+  const ig1 = $g("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.left > div.sc-image > a > img.middle-sm.img-fluid").attr("src"); 
   const scrape2 = await axios.get(link);
   const $i = cheerio.load(scrape2.data);
-  const nip = '//*[@id="article-phara2"]';
-  const desc2 = $i(nip).text() 
+  const desc2 = $i("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
 let [desc, desca] = desc2.split `<br>`;
-    const titl = $i("/html/body/div[9]/center/h1").text()
+    const titl = $i("html > body.main-bc > div.container.site-width > center > h1.main-tittle").text()
   })}
 const mm = '${titl} /n ${desc}';
   await Void.sendMessage(citel.chat,{image:{url: ig1,}, caption: mm,}) 
