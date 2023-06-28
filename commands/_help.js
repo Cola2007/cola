@@ -1,14 +1,11 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
-
+/**  Copyright (C) 2023. 
+  Licensed under the  GPL-3.0 License; 
+  You may not use this file except in compliance with the License. 
+  It is supplied in the hope that it may be useful. 
+  * @project_name : Blue_Lion_Bot 
+  * @author : nipuna rangana
+  * @description : Blue-Lion,A Multi-functional whatsapp bot. 
+  * @version 0.0.2 **/
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
@@ -54,7 +51,7 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '```' + `│ ╭───────◇🍧◇───────«
+                    '```' + `│ ╭──────◇🍧◇──────«
 │ │ 👤User:- ${citel.pushName}
 │ │ 💝Theme:- ${tlang().title}
 │ │ 🍧Prefix:- [ ${prefix} ]
@@ -65,23 +62,23 @@ Secktor.cmd({
 │ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ ☯️Time:- ${time}
 │ │ ❣️Date:- ${date}
-│ ╰───────●💕●───────»
+│ ╰──────●💕●──────»
 ╰───────────────⊷\n
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
                     str += `
-┃  ╭───────◑❤️◑───────«
+┃  ╭──────◑❤️◑──────«
 ┃  │     🎧  ${tiny(category)} 🎧
-┃  ╰┬──────◈💕◈───────»
+┃  ╰┬─────◈💕◈──────»
 ┃  ┌┤\n`
                     for (const plugins of cmds[category]) {
                         str += `┃  │ ◉ ${plugins}\n`
                     }
-                    str += `┃  ╰─────────────◆`
+                    str += `┃  ╰────────────◆`
                 }
 
-                str += `\n╰━━━━━━━━━━━──⊷\n`
+                str += `\n╰━━━━━━━━━━──⊷\n`
                 let buttonMessaged = {
                     image: { url: THUMB_IMAGE },
                     caption: str,
@@ -119,7 +116,7 @@ for (let i = 0; i < commands.length; i++)
 {
      if(commands[i].pattern==undefined) continue
      str += `📗 ${fancytext(commands[i].pattern,1)}\n` 
-     str += `🍧 ${fancytext(commands[i].desc,1)}\n`
+     str += `🍁 ${commands[i].desc,1}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
