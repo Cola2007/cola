@@ -97,7 +97,7 @@ async function ig(linak){
   const $i = cheerio.load(scrape2.data)
   const nip = '//*[@id="article-phara2"]';
   const desc2 = $i(nip).text() 
-let [desc, desca] = desc2.split `<br> `;
+let [desc, desca] = desc2.split `<br>`;
     const titl = $i("/html/body/div[9]/center/h1").text()
   })}
 	var mm = '${titl} /n ${desc} /n/n ${link}';
