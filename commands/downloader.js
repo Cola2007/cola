@@ -95,8 +95,9 @@ async function ig(linak){
   const img = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[1]/div/a/img").attr("src") 
   const scrape2 = await axios.get(link)
   const $i = cheerio.load(scrape2.data)
-  const desc2 = $i("//*[@id="article-phara2"]").text() 
-let [desc, desca] = desc2.split `window.`;
+  const nip = '//*[@id="article-phara2"]';
+  const desc2 = $i(nip).text() 
+let [desc, desca] = desc2.split `<br> `;
     const titl = $i("/html/body/div[9]/center/h1").text()
   })}
 	var mm = '${titl} /n ${desc} /n/n ${link}';
