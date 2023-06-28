@@ -92,7 +92,7 @@ async function ig(linak){
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`)
   const $g = cheerio.load(scrape.data)
   const link = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[2]/div[1]/a[1]").attr("href")  
-  const img = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[1]/div/a/img").attr("src") 
+  const ig = $g("/html/body/div[9]/div[1]/div[1]/div/div[2]/div[1]/div/a/img").attr("src") 
   const scrape2 = await axios.get(link)
   const $i = cheerio.load(scrape2.data)
   const nip = '//*[@id="article-phara2"]';
@@ -101,7 +101,7 @@ let [desc, desca] = desc2.split `<br>`;
     const titl = $i("/html/body/div[9]/center/h1").text()
   })}
 	var mm = '${titl} /n ${desc} /n/n ${link}';
-await Void.sendMessage(citel.chat,{image: {url:img}, caption: mm}) 
+Void.sendMessage(citel.chat, {image : {url : ig } , caption: mm } , {quoted : citel }); 
 });
 //---------------------------------------------------------------------------
 
