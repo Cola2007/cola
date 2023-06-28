@@ -101,7 +101,7 @@ let [desc, desca] = desc2.split `<br>`;
     const titl = $i("/html/body/div[9]/center/h1").text()
   })}
 	var mm = '${titl} /n ${desc} /n/n ${link}';
-await Void.sendMessage(citel.chat,{image:{url:img}, caption: mm}) 
+await Void.sendMessage(citel.chat,{image: {url:img}, caption: mm}) 
 });
 //---------------------------------------------------------------------------
 
