@@ -74,7 +74,7 @@ Blue Lion whatsapp bot is,
 <div>
 <h2 align="center">✊ THANKS FOR YOUR ✊</h2>
 <div align="center">
-<img src="https://avatars.githubusercontent.com/u/121292566?v=4">
+<img src="**">
 </div>
 <hr>
 </div>
