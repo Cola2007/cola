@@ -510,14 +510,14 @@ catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
      }
  })
  //---------------------------------------------------------------------------
- cmd({ on: "voice" }, async(Void, citel, text) => {
-    if (Config.autovoice === 'true') {
-    const urlk ='https://github.com/nipuna15/Voice/raw/main/Alive.mp3';
-        await Void.sendMessage(
-          citel.chat, 
-      { audio: { url: urlk }, mimetype: 'audio/mp4' }
-        )
+ //cmd({ on: "voice" }, async(Void, citel, text) => {
+    //if (Config.autovoice === 'true') {
+    //const urlk ='https://github.com/nipuna15/Voice/raw/main/Alive.mp3';
+        //await Void.sendMessage(
+          //citel.chat, 
+     // { audio: { url: urlk }, mimetype: 'audio/mp4' }
+     //   )
         
-    }
-})
+   // }
+//})
 
