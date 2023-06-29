@@ -60,11 +60,11 @@ async(Void, citel, text) => {
     let textt = "*YouTube Search*\n\n Result From " + text + "\n\n───────────────────\n";
     let no = 1;
     for (let i of search.all) {
-        textt += `⚡ No : ${no++}\n ❤Title : ${i.title}\n♫ Type : ${
+        textt += `🏆 No : ${no++}\n ❤Title : ${i.title}\n♫ Type : ${
   i.type
-}\n🙈Views : ${i.views}\n⌛Duration : ${
+}\n🎧Views : ${i.views}\n⌛Duration : ${
   i.timestamp
-}\n🌟Upload At : ${i.ago}\n👑Author : ${i.author.name}\n🎵Url : ${
+}\n📡Upload At : ${i.ago}\n👤Author : ${i.author.name}\n🎵Url : ${
   i.url
 }\n\n──────────────\n\n`;
     }
