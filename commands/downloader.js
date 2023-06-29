@@ -87,15 +87,14 @@ cmd({
    use:'<does this>', 
  }, async(Void,citel,text) => { 
    return new Promise(async (resolve, reject) => { 
-   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`) 
+   const scrape = await axios.get("https://www.hirunews.lk/local-news.php?pageID=1") 
    const $g = cheerio.load(scrape.data) 
-   const link = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.middle > a:nth-child(1)').attr('href')   
-   const img = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.left > div > a > img').attr('src')  
-   const scrape2 = await axios.get(link) 
-   const $k = cheerio.load(scrape2.data) 
-   const desc2 = $k('#article-phara').text()  
- let [desc, desca] = desc2.split `window.`; 
-     const title = $k('body > div:nth-child(14) > center > h1').text() 
+  const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
+  const scrape2 = await axios.get(link);
+  const $i = cheerio.load(scrape2.data);
+  const ig1 = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
+  const desc = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
+  const titl = $i("body.main-bc > div.container.site-width > center > h1.main-tittle").text()
   const mm = '${titl} /n ${desc}'; 
    await Void.sendMessage(citel.chat,{image:{url: img,}, caption: mm,}) 
    }) 
