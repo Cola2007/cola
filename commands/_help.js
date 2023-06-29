@@ -116,7 +116,7 @@ Secktor.cmd({
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str += `📗 ${fancytext(commands[i].pattern,2)}\n` 
+     str += `📗 ${fancytext(commands[i].pattern,4)}\n` 
      str += `🍁 ${fancytext(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
