@@ -92,12 +92,12 @@ async function ig(linak){
   await Void.sendMessage(citel.chat, reactionMessage)
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
   const $g = cheerio.load(scrape.data);
-  const link = $g("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
+  const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
   const scrape2 = await axios.get(link);
   const $i = cheerio.load(scrape2.data);
-  const ig1 = $i("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
-  const desc = $i("html > body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
-  const titl = $i("html > body.main-bc > div.container.site-width > center > h1.main-tittle").text()
+  const ig1 = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
+  const desc = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
+  const titl = $i("body.main-bc > div.container.site-width > center > h1.main-tittle").text()
   })}
 const mm = '${titl} /n ${desc}';
   await Void.sendMessage(citel.chat,{image:{url: ig1,}, caption: mm,}) 
