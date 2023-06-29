@@ -240,7 +240,7 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            return Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
+          await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
