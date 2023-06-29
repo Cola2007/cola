@@ -80,6 +80,27 @@ async(Void, citel, text) => {
 }
 )
 //---------------------------------------------------------------------------
+cmd({ 
+   pattern: 'news2', 
+   desc: 'Get Hiru News', 
+   category: 'news', 
+   use:'<does this>', 
+ }, async(Void,citel,text) => { 
+   return new Promise(async (resolve, reject) => { 
+   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`) 
+   const $g = cheerio.load(scrape.data) 
+   const link = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.middle > a:nth-child(1)').attr('href')   
+   const img = $g('body > div:nth-child(14) > div.row > div.col-sm-12.col-md-9.col-lg-9.section > div > div:nth-child(2) > div.column.left > div > a > img').attr('src')  
+   const scrape2 = await axios.get(link) 
+   const $k = cheerio.load(scrape2.data) 
+   const desc2 = $k('#article-phara').text()  
+ let [desc, desca] = desc2.split `window.`; 
+     const title = $k('body > div:nth-child(14) > center > h1').text() 
+  const mm = '${titl} /n ${desc}'; 
+   await Void.sendMessage(citel.chat,{image:{url: img,}, caption: mm,}) 
+   }) 
+ });
+ //----------------------------------------------
 cmd({
   pattern: 'news',
   desc: 'Get Hiru News',
