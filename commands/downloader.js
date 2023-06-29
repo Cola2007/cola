@@ -9,7 +9,6 @@
 
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
 const { mediafire } = require("../lib/mediafire.js");
-const{appkdl} =require("../lib/apk-dl.js");
 const cheerio = require('cheerio');
 const fbInfoVideo = require('fb-info-video');
 const request = require('request');
@@ -79,45 +78,7 @@ async(Void, citel, text) => {
     });
 }
 )
-//---------------------------------------------------------------------------
-cmd({ 
-   pattern: 'news2', 
-   desc: 'Get Hiru News', 
-   category: 'news', 
-   use:'<does this>', 
- }, async(Void,citel,text) => { 
-   return new Promise(async (resolve, reject) => { 
-   const scrape = await axios.get("https://www.hirunews.lk/local-news.php?pageID=1") 
-   const $g = cheerio.load(scrape.data) 
-  const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
-  const scrape2 = await axios.get(link);
-  const $i = cheerio.load(scrape2.data);
-  const ig1 = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
-  const desc = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
-  const titl = $i("body.main-bc > div.container.site-width > center > h1.main-tittle").text()
-  const mm = '${titl} /n ${desc}'; 
-   await Void.sendMessage(citel.chat,{image:{url: img,}, caption: mm,}) 
-   }) 
- });
- //----------------------------------------------
-cmd({
-  pattern: 'news',
-  desc: 'Get Hiru News',
-  category: 'news',
-  use:'<does this>',
-}, async(Void,citel,text) => {
-  const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
-  const $g = cheerio.load(scrape.data);
-  const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
-  const scrape2 = await axios.get(link);
-  const $i = cheerio.load(scrape2.data);
-  const ig1 = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
-  const desc = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
-  const titl = $i("body.main-bc > div.container.site-width > center > h1.main-tittle").text()
-const mm = '${titl} /n ${desc}';
-  await Void.sendMessage(citel.chat,{image:{url: ig1,}, caption: mm,}) 
-});
-//---------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 
 cmd({
             pattern: "facebook",
