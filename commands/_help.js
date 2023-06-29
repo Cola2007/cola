@@ -24,6 +24,7 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
+          await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
             const { commands } = require('../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
