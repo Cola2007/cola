@@ -48,7 +48,7 @@ Secktor.cmd({
                 moment.tz.setDefault('Asia/KOLKATA')
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                const vdf = Config.ownername.split(' ')
+                const vdf = Config.ownername
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
@@ -99,7 +99,7 @@ Secktor.cmd({
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
-            const vdf = Config.ownername.split(' ')
+            const vdf = Config.ownername
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += '```' + `
@@ -116,8 +116,8 @@ Secktor.cmd({
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str += `📗 ${fancytext(commands[i].pattern,1)}\n` 
-     str += `🍁 ${(commands[i].desc,1)}\n\n`
+     str += `📗 ${fancytext(commands[i].pattern,2)}\n` 
+     str += `🍁 ${fancytext(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
