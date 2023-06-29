@@ -85,11 +85,7 @@ cmd({
   desc: 'Get Hiru News',
   category: 'news',
   use:'<does this>',
-}, async(Void,citel,text) => {
-	let other = []
-async function ig(linak){
-  return new Promise(async (resolve, reject) => {
-  await Void.sendMessage(citel.chat, reactionMessage)
+}, async(Void,citel,text){
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
   const $g = cheerio.load(scrape.data);
   const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
@@ -98,7 +94,6 @@ async function ig(linak){
   const ig1 = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div.main-article-banner > img.ls-is-cached.lazyloaded").attr("src");
   const desc = $i("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.main-article-section > div#article-phara2").text() 
   const titl = $i("body.main-bc > div.container.site-width > center > h1.main-tittle").text()
-  })}
 const mm = '${titl} /n ${desc}';
   await Void.sendMessage(citel.chat,{image:{url: ig1,}, caption: mm,}) 
 });
