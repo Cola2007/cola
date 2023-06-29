@@ -361,8 +361,8 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "audio",
-            alias :['song'],
+            pattern: "song",
+            alias :['audio'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
             filename: __filename,
@@ -411,7 +411,27 @@ cmd({
                         },
                     },
                 }
+let buttonMessag1e = {
+                    document: fs.readFileSync(`./${randomName}`),
+                    mimetype: 'audio/mpeg',
+                    fileName: titleYt + ".mp3",
+                    headerType: 4,
+                    contextInfo: {
+                        externalAdReply: {
+                            title: titleYt,
+                            body: citel.pushName,
+                            renderLargerThumbnail: true,
+                            thumbnailUrl: search.all[0].thumbnail,
+                            mediaUrl: text,
+                            mediaType: 1,
+                            thumbnail: await getBuffer(search.all[0].thumbnail),
+                            sourceUrl: text,
+                        },
+                    },
+                }
                 await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+
+Void.sendMessage(citel.chat, buttonMessag1e, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } else {
                 citel.reply(`❌ File size bigger than 100mb.`);
