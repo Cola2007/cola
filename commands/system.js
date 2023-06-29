@@ -265,6 +265,7 @@ ${alivemessage}
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
             });
+                                        return Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3'}, mimetype: 'audio/mp4', ptt: true }, { quoted: citel, });     
 
         }
     )
