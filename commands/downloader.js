@@ -85,7 +85,7 @@ cmd({
   desc: 'Get Hiru News',
   category: 'news',
   use:'<does this>',
-}, async(Void,citel,text){
+}, async(Void,citel,text) => {
   const scrape = await axios.get(`https://www.hirunews.lk/local-news.php?pageID=1`);
   const $g = cheerio.load(scrape.data);
   const link = $g("body.main-bc > div.container.site-width > div.row > div.col-sm-12-ol-lg-9.section > div.trending-section > div.row > div.column.middle > a").attr("href");  
