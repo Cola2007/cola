@@ -86,9 +86,9 @@ Copy the JSON down and paste in repl then fill the vars
   
 #  🌐🤍𝐁𝐋𝐔𝐄 𝐋𝐈𝐎𝐍 𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐁𝐎𝐓🤍🌐  <img src="https://camo.githubusercontent.com/2c8b3670d933220ae3c023fa1d568682975cce3f10799d0d3ff5ecac394b4ee8/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f31326f75664342304d795a31476f2f67697068792e676966" width="50px">
 
-* [🧑‍💻 Join Blue Lion Support Group 🧑‍💻](https://t.me/+Fc2vyKYBjFk3ZWZl)
+* [🧑‍💻 Join Blue Lion Support Group 🧑‍💻](https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi)
 
-* [🧑‍💻 Join Blue Lion Support Group 🧑‍💻](https://chat.whatsapp.com/BbIpvkRD4qP6xKckb8cpT0)
+* [🧑‍💻 Join Blue Lion Support Group 🧑‍💻](https://chat.whatsapp.com/GkYZvcVSUSR1WBvl6rBpiw)
 
 
 <br>
