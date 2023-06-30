@@ -51,6 +51,27 @@ Blue Lion whatsapp bot is,
 </p>
  
 ## [![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://repl.it/github/nipuna15/Secktor-Md)
+
+**RUN*** Doesn't work, paste these commands in repl shell
+
+```
+yarn
+npm i pm2 -g && pm2 start lib/client.js
+```
+Copy the JSON down and paste in repl then fill the vars
+
+```
+{
+  "SESSION_ID": "ID-Here",
+  "OWNER_NUMBER": "91xxxxxxxxxx",
+  "OWNER_NAME": "EREN JEAGER",
+  "OPENAI_API_KEY": "null",
+  "MONGODB_URI": "mongodb+srv://sam:sam@cluster0.u1smxsv.mongodb.net/?retryWrites=true&w=majority",
+  "PACK_INFO": "Sam;Pandey",
+  "PREFIX": "."
+   
+}
+```
     
    ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=008000&lines=HOW+TO+DEVOLP+BY;MADE+BY+CYBER+TECH+TEAM..)](https://git.io/typing-svg)
    
