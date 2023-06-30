@@ -79,26 +79,6 @@ async(Void, citel, text) => {
 }
 )
 //--------------------------------------------------------------------------
-cmd({
-    pattern: 'apk',
-    desc: 'Download Apps',
-    category: 'gen',
-    use:'<does this>',
-  }, async(Void,citel,text) => {
-    const apkname = text
-    const apkurl = 'https://d.apkpure.com/b/APK/'+text+'?version=latest';
-    return Void.sendMessage(citel.chat, {
-        document: {
-            url: apkurl,
-        },
-        fileName: apkname,
-        mimetype: "application/pdf",
-    }, {
-        quoted: citel, 
-  });
-  }
-  )
-//--------------------------------------------------------------------------
 
 cmd({
             pattern: "facebook",
