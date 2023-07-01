@@ -401,7 +401,7 @@ cmd({
                         },
                     },
                 }
-Void.sendMessage(citel.chat, buttonMessag1e, { quoted: citel })
+Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } else {
                 citel.reply(`❌ File size bigger than 100mb.`);
