@@ -203,10 +203,10 @@ cmd({
                 if (fileSizeInMegabytes <= dlsize) {
 
                         let buttonMessage = { 
-                         video: fs.readFileSync(`./${randomName}`),, 
+                         video: fs.readFileSync(`./${randomName}`), 
                          mimetype: 'video/mp4', 
                          fileName: `${titleYt}.mp4`,
-                         caption: ` ⿻ Title : ${titleYt}\n ⿻ File Size : ${fileSizeInMegabytes} MB`,
+                         caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`,
   
                      } 
                   Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
