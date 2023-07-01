@@ -188,7 +188,7 @@ cmd({
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
-                citel.reply('*Downloadig:* '+text+'Mp4')
+                citel.reply('📥 Downloadig: ${titleYt}.mp4')
                 const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
                     })
@@ -201,26 +201,16 @@ cmd({
                 let fileSizeInBytes = stats.size;
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
-                    let buttonMessage = {
-                        video: fs.readFileSync(`./${randomName}`),
-                        jpegThumbnail: log0,
-                        mimetype: 'video/mp4',
-                        fileName: `${titleYt}.mp4`,
-                        caption: ` ⿻ Title : ${titleYt}\n ⿻ File Size : ${fileSizeInMegabytes} MB`,
-                        headerType: 4,
-                        contextInfo: {
-                            externalAdReply: {
-                                title: titleYt,
-                                body: citel.pushName,
-                                thumbnail: await getBuffer(search.all[0].thumbnail),
-                                renderLargerThumbnail: true,
-                                mediaType: 2,
-                                mediaUrl: search.all[0].thumbnail,
-                                sourceUrl: search.all[0].thumbnail
-                            }
-                        }
-                    }
-                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+
+                        let buttonMessage = { 
+                         video: fs.readFileSync(`./${randomName}`),, 
+                         mimetype: 'video/mp4', 
+                         fileName: `${titleYt}.mp4`,
+                         caption: ` ⿻ Title : ${titleYt}\n ⿻ File Size : ${fileSizeInMegabytes} MB`,
+  
+                     } 
+                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+
                  return fs.unlinkSync(`./${randomName}`);
                 } else {
                     citel.reply(`❌ File size bigger than 100mb.`);
