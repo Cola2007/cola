@@ -318,16 +318,15 @@ cmd({
             }
         })
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "mediafire",
-            desc: "Downloads zip from Mediafire.",
+    cmd({
+            pattern: "apk",
+            desc: "Downloads apps.",
             category: "downloader",
             filename: __filename,
             use: '<url of mediafire>',
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`Give link ${tlang().greet}`);
-            if (!isUrl(text.split(" ")[0]) && !text.split(" ")[0].includes("mediafire.com")) return reply(`The link you provided is invalid`);
+            if (!text) return citel.reply(`Give app name`);
             const baby1 = await mediafire(text);
             if (baby1[0].size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1));
             const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ*
@@ -342,6 +341,48 @@ cmd({
                     },
                     fileName: baby1[0].nama,
                     mimetype: baby1[0].mime,
+                }, {
+                    quoted: citel,
+                })
+                .catch((err) => reply("could not found anything"));
+
+        }
+    )
+    //---------------------------------------------------------------------------
+cmd({
+            pattern: "mediafire",
+            desc: "Downloads zip from Mediafire.",
+            category: "downloader",
+            filename: __filename,
+            use: '<url of mediafire>',
+        },
+        async(Void, citel, text) => {
+            if (!text) return citel.reply(`Give a app name`);
+            const url = 'https://'+text+'telegram.en.aptoide.com/app';
+            const res = await axios.get(url);
+            const $ = cheerio.load(res.data);
+            const link = $('div.appview-header__DownloadContainer-sc-924t8o-16 bdhtRG').attr('href');
+            const namee = $('h1.app-informations__Title-sc-1wisk8p-7 iTrGxH"').text();
+            const icond = $('img.app-informations__AppIcon-sc-1wisk8p-3 dhsYJX').attr('src');
+            const packname = $('span.info__APKDetail-sc-hpbddq-8 bbGeXE').text('#text');
+            const vis = $('span.info__APKDetail-sc-hpbddq-8 bbGeXE').text('#text');
+            const siz = $('span.info__APKDetail-sc-hpbddq-8 bbGeXE').text('#text');
+            const res1 = await axios.get(link);
+            const $1 =  cheerio.load(res1.data);
+            const dll = $1('div.thank-you__ClickhereButton-sc-1lq338h-31 eoykHw').attr('href');
+            const result4 = `*App Downloader*
+*Name* : ${namee}
+*Pkg name* : ${packname}
+*Size* : ${siz}
+*Version* : ${baby1[0].link}`;
+            reply(`${result4}`);
+            const fname = namee+'.apk'
+            return Void.sendMessage(citel.chat, {
+                    document: {
+                        url: dlll,
+                    },
+                    fileName: fname,
+                    mimetype: "application/pdf",
                 }, {
                     quoted: citel,
                 })
