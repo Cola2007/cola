@@ -319,7 +319,7 @@ cmd({
         })
     //---------------------------------------------------------------------------
     cmd({
-            pattern: "apk",
+            pattern: "mediafire",
             desc: "Downloads apps.",
             category: "downloader",
             filename: __filename,
@@ -350,15 +350,15 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "mediafire",
-            desc: "Downloads zip from Mediafire.",
+            pattern: "apk",
+            desc: "Downloads app.",
             category: "downloader",
             filename: __filename,
             use: '<url of mediafire>',
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Give a app name`);
-            const url = 'https://'+text+'telegram.en.aptoide.com/app';
+            const url = 'https://'+text+'.en.aptoide.com/app';
             const res = await axios.get(url);
             const $ = cheerio.load(res.data);
             const link = $('div.appview-header__DownloadContainer-sc-924t8o-16 bdhtRG').attr('href');
