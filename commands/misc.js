@@ -494,9 +494,4 @@ return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
 catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
     }
 )
- //---------------------------------------------------------------------------
- cmd({ on: "body" }, async(Void, citel, text) => {
-const urlk ='https://github.com/ravindu01manoj/QueenSewWhatsappBot/raw/master/VoiceClip/'+text+'.mp3';
-await Void.sendMessage(citel.chat, { audio: {url : urlk,}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });    
-})
-
+ //-----------------------------
