@@ -362,7 +362,7 @@ cmd({
             const res = await axios.get(url);
             const $ = cheerio.load(res.data);
             const link = $('div.appview-header__DownloadContainer-sc-924t8o-16 bdhtRG').attr('href');
-            const namee = $('h1.app-informations__Title-sc-1wisk8p-7 iTrGxH"').text();
+            const namee = $('h1.app-informations__Title-sc-1wisk8p-7 iTrGxH').text();
             const icond = $('img.app-informations__AppIcon-sc-1wisk8p-3 dhsYJX').attr('src');
             const packname = $('span.info__APKDetail-sc-hpbddq-8 bbGeXE').text('#text');
             const vis = $('span.info__APKDetail-sc-hpbddq-8 bbGeXE').text('#text');
