@@ -21,7 +21,7 @@ module.exports = {
   author:  process.env.PACK_INFO.split(";")[0] === undefined ? 'SamPandey001' : process.env.PACK_INFO.split(";")[0],
   packname:  process.env.PACK_INFO.split(";")[1] === undefined ? 'Secktor-Md' : process.env.PACK_INFO.split(";")[1],
   autoreaction :  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION,
-auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
+autoreadstatus :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   autobio : process.env.AUTO_BIO  === undefined ? true : process.env.AUTO_BIO,
   autovoice : process.env.AUTO_VOICE === undefined ?  true : process.env.AUTO_VOICE,
   antibadword :  process.env.ANTI_BAD_WORD === undefined ? 'nbwoed' : process.env.ANTI_BAD_WORD,
