@@ -100,7 +100,12 @@
      "description": "Auto Seen all status.", 
       "value": "false", 
       "required": false  
-   },  
+   },
+ "AUTO_VOICE": { 
+     "description": "Automatic send Voice massage.", 
+      "value": "false", 
+      "required": false  
+   },   
    "PACK_INFO": { 
      "description": "Put packname;authorname.", 
       "value": "Nipuna;Blue-Lion", 
