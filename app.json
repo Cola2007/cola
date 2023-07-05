@@ -91,6 +91,16 @@
       "value": "false", 
       "required": false  
    }, 
+    "ALWAYS_ONLINE": { 
+     "description": "All Time Online in whatsapp.", 
+      "value": "false", 
+      "required": false  
+   },
+ "AUTO_READ_STATUS": { 
+     "description": "Auto Seen all status.", 
+      "value": "false", 
+      "required": false  
+   },  
    "PACK_INFO": { 
      "description": "Put packname;authorname.", 
       "value": "Nipuna;Blue-Lion", 
