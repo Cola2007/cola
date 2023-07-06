@@ -199,7 +199,7 @@ cmd({
     async(Void, citel) => {
        let res = await api.latest_id();
        const nid = res.results.news_id;
-       let news = await api.comments(nid);
+       let news = await api.news(nid);
        const tt = news.results.TITLE;
        const dss = news.results.DESCRIPTION;
        const ttime = news.results.PUBLISHED;
