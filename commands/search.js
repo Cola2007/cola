@@ -205,18 +205,8 @@ cmd({
        const ttime = news.results.PUBLISHED;
        const img = news.results.COVER;
        const cap = `${tt} \n ${dss} \n \n ${ttime}`;
-                let buttonMessage = {
-                    image: {
-                        url: img,
-                    },
-                    caption: cap,
-                    headerType: 4,
-                };
-                Void.sendMessage(citel.chat, buttonMessage, {
-                    quoted: citel,
-                });
-        }
-)
+                await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
+})
 //--------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
