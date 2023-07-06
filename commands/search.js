@@ -204,7 +204,7 @@ cmd({
        const dss = news.results.DESCRIPTION;
        const ttime = news.results.PUBLISHED;
        const img = news.results.COVER;
-       const cap = `${tt} \n ${dss} \n \n ${ttime}`;
+       const cap = `● ${tt} \n◇ ${dss} \n \n ◈ ${ttime}`;
                 await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
 })
 //--------------------------------------------------------------------------
