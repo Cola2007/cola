@@ -88,22 +88,27 @@
    }, 
        "AUTO_REACTION": { 
      "description": "Reacts emoji to all commands.", 
-      "value": "false", 
+      "value": "true", 
       "required": false  
    }, 
+   "AUTO_BIO": { 
+    "description": "Auto set About.", 
+     "value": "true", 
+     "required": false  
+  }, 
     "ALWAYS_ONLINE": { 
      "description": "All Time Online in whatsapp.", 
-      "value": "false", 
+      "value": "true", 
       "required": false  
    },
  "AUTO_READ_STATUS": { 
      "description": "Auto Seen all status.", 
-      "value": "false", 
+      "value": "true", 
       "required": false  
    },
  "AUTO_VOICE": { 
      "description": "Automatic send Voice massage.", 
-      "value": "false", 
+      "value": "true", 
       "required": false  
    },   
    "PACK_INFO": { 
