@@ -14,6 +14,8 @@ const {fetchJson,cmd, tlang } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
+const Esana = require('@sl-code-lords/esana-news')
+var api = new Esana()
 
     //---------------------------------------------------------------------------
 cmd({
@@ -187,6 +189,35 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+    cmd({
+        pattern: "news",
+        category: "news",
+        desc: "Searches news",
+        use: '<text>',
+        filename: __filename,
+    },
+    async(Void, citel) => {
+       let res = await api.latest_id();
+       const nid = res.results.news_id;
+       let news = await api.comments(nid);
+       const tt = news.results.TITLE;
+       const dss = news.results.DESCRIPTION;
+       const ttime = news.results.PUBLISHED;
+       const img = news.results.COVER;
+       let cap = '${tt}\n${dss}\n\n${ttime}';
+                let buttonMessage = {
+                    image: {
+                        url: img,
+                    },
+                    caption: cap,
+                    headerType: 4,
+                };
+                Void.sendMessage(citel.chat, buttonMessage, {
+                    quoted: citel,
+                });
+        }
+)
+//--------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
             category: "search",
