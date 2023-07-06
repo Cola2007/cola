@@ -204,7 +204,7 @@ cmd({
        const dss = news.results.DESCRIPTION;
        const ttime = news.results.PUBLISHED;
        const img = news.results.COVER;
-       let cap = `${tt} \n ${dss} \n \n ${ttime}`;
+       const cap = `${tt} \n ${dss} \n \n ${ttime}`;
                 let buttonMessage = {
                     image: {
                         url: img,
