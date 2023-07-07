@@ -178,7 +178,7 @@ cmd({
   use:'<does this>',
 }, async(Void,citel,text) => {
 let apks = await gplay.search({
-    term: "panda",
+    term: text,
     num: 1
   }).then(console.log, console.log);
 
@@ -189,7 +189,7 @@ const apkst = apks.score;
 const apkpres = apks.priceText;
 const apkt = apks.title;
 const rest = 'Name-${apkt}\n\n';
-await Void.sendMessage(citel.chat,{image:{url: apkimg}, caption: apkimg});
+await Void.sendMessage(citel.chat,{image:{url: apkimg}, caption: rest});
 
 let apkdata = await apkdownload(apkid);
 const apkname = apkdata.name;
