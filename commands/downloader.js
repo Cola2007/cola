@@ -180,12 +180,12 @@ cmd({
 let apks = await gplay.search({
     term: text,
     num: 1
-  }).then(console.log, console.log);
+  })
 
-const apkid = apks.appId;
-const apkimg = apks.icon;
-const apkpub = apks.developer;
-const apkst = apks.score;
+const apkid = apks.appId ;
+const apkimg = apks.icon ;
+const apkpub = apks.developer ;
+const apkst = apks.score ;
 const apkpres = apks.priceText;
 const apkt = apks.title;
 const rest = 'Name-${apkt}\n\n';
