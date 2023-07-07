@@ -16,6 +16,10 @@ const axios= require('axios');
 const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
+var gplay = require('google-play-scraper');
+const { 
+    apkdownload
+    } = require('aptoide-scraper');
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 //---------------------------------------------------------------------------
@@ -194,7 +198,7 @@ return Void.sendMessage(citel.chat, {
     document: {
         url: dla,
     },
-    fileName: apkname
+    fileName: apkname,
     mimetype: "application/vnd.android.package-archive",
 }, {
     quoted: citel,
