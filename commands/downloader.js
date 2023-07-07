@@ -20,6 +20,9 @@ var gplay = require('google-play-scraper');
 const { 
     apkdownload
     } = require('aptoide-scraper');
+const { 
+search
+} = require('aptoide-scraper');
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 //---------------------------------------------------------------------------
@@ -177,23 +180,17 @@ cmd({
   category: 'downloader',
   use:'<does this>',
 }, async(Void,citel,text) => {
-let apks = await gplay.search({
-    term: text,
-    num: 1
-  })
-
-const apkid = apks.appId ;
-const apkimg = apks.icon ;
-const apkpub = apks.developer ;
-const apkst = apks.score ;
-const apkpres = apks.priceText;
-const apkt = apks.title;
-const rest = 'Name-${apkt}\n\n';
-await Void.sendMessage(citel.chat,{image:{url: apkimg}, caption: rest});
-
+let search = await search(text)
+console.log(search)
+const apkid = search[0].Id ;
+const apkname = search[0].name ;
 let apkdata = await apkdownload(apkid);
 const apkname = apkdata.name;
 const dla = apkdata.dllink;
+const icona = apkdata.icon;
+const lastup = apkdata.lastup;
+const size = apkdata.size;
+
 return Void.sendMessage(citel.chat, {
     document: {
         url: dla,
