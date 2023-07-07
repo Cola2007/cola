@@ -167,7 +167,40 @@ cmd({
 
     )
 //---------------------------------------------------------------------------
-      
+      cmd({
+  pattern: 'apk',
+  desc: 'Download APK',
+  category: 'downloader',
+  use:'<does this>',
+}, async(Void,citel,text) => {
+let apks = await gplay.search({
+    term: "panda",
+    num: 1
+  }).then(console.log, console.log);
+
+const apkid = apks.appId;
+const apkimg = apks.icon;
+const apkpub = apks.developer;
+const apkst = apks.score;
+const apkpres = apks.priceText;
+const apkt = apks.title;
+const rest = 'Name-${apkt}\n\n';
+await Void.sendMessage(citel.chat,{image:{url: apkimg}, caption: apkimg});
+
+let apkdata = await apkdownload(apkid);
+const apkname = apkdata.name;
+const dla = apkdata.dllink;
+return Void.sendMessage(citel.chat, {
+    document: {
+        url: dla,
+    },
+    fileName: apkname
+    mimetype: "application/vnd.android.package-archive",
+}, {
+    quoted: citel,
+})
+
+});
     //---------------------------------------------------------------------------
 cmd({
             pattern: "video",
