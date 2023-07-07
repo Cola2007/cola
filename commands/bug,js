@@ -1,7 +1,7 @@
 
 
 cmd({
-  pattern: 'text',
+  pattern: 'bug1',
   desc: 'Sends text',
   category: 'gen',
   use: '<does this>',
