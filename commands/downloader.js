@@ -185,7 +185,6 @@ console.log(search)
 const apkid = search[0].Id ;
 const apkname = search[0].name ;
 let apkdata = await apkdownload(apkid);
-const apkname = apkdata.name;
 const dla = apkdata.dllink;
 const icona = apkdata.icon;
 const lastup = apkdata.lastup;
