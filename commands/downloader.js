@@ -16,13 +16,10 @@ const axios= require('axios');
 const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
-var gplay = require('google-play-scraper');
 const { 
     apkdownload
     } = require('aptoide-scraper');
 const { 
-search
-} = require('aptoide-scraper');
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 //---------------------------------------------------------------------------
@@ -180,7 +177,7 @@ cmd({
   category: 'downloader',
   use:'<does this>',
 }, async(Void,citel,text) => {
-let search = await search(text)
+let apkdownload = await search(text);
 console.log(search)
 const apkid = search[0].Id ;
 const apkname = search[0].name ;
@@ -190,7 +187,7 @@ const icona = apkdata.icon;
 const lastup = apkdata.lastup;
 const size = apkdata.size;
 
-return Void.sendMessage(citel.chat, {
+return Void.sendMessage(citel.chat,{
     document: {
         url: dla,
     },
