@@ -177,11 +177,11 @@ cmd({
   category: 'downloader',
   use:'<does this>',
 }, async(Void,citel,text) => {
-let search = await apks(text);
+let search = await apks.search(text);
 console.log(search)
 const apkid = search[0].Id ;
 const apkname = search[0].name ;
-let apkdata = await apks(apkid);
+let apkdata = await apks.download(apkid);
 const dla = apkdata.dllink;
 const icona = apkdata.icon;
 const lastup = apkdata.lastup;
