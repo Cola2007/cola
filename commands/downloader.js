@@ -19,7 +19,7 @@ const fs = require('fs-extra')
 const { 
     apkdownload
     } = require('aptoide-scraper');
-const { 
+
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 //---------------------------------------------------------------------------
