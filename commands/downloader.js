@@ -17,7 +17,7 @@ const googleTTS = require("google-tts-api");
 const ytdl = require('ytdl-secktor')
 const fs = require('fs-extra')
 const { 
-    apkdownload
+    apks
     } = require('aptoide-scraper');
 
 var videotime = 60000 // 1000 min
@@ -177,11 +177,11 @@ cmd({
   category: 'downloader',
   use:'<does this>',
 }, async(Void,citel,text) => {
-let apkdownload = await search(text);
+let search = await apks(text);
 console.log(search)
 const apkid = search[0].Id ;
 const apkname = search[0].name ;
-let apkdata = await apkdownload(apkid);
+let apkdata = await apks(apkid);
 const dla = apkdata.dllink;
 const icona = apkdata.icon;
 const lastup = apkdata.lastup;
