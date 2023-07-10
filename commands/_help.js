@@ -24,6 +24,7 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
             const { commands } = require('../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
