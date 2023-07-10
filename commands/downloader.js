@@ -58,6 +58,12 @@ async function tiktokdl (url) {
     use: '<yt search text>',
 },
 async(Void, citel, text) => {
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "🔎", 
+                  key: citel.key 
+              } 
+          }) 
     let yts = require("secktor-pack");
     if (!text) return citel.reply(`Example : ${prefix}yts ${tlang().title} WhatsApp Bot`);
     let search = await yts(text);
@@ -94,6 +100,12 @@ cmd({
         },
 
         async(Void, citel, text) => {
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "🎬", 
+                  key: citel.key 
+              } 
+          }) 
 if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`);
 fbInfoVideo.getInfo(text)
   .then(info =>{
@@ -207,6 +219,12 @@ cmd({
             use: '<faded-Alan Walker>',
         },
         async(Void, citel, text) => {
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "📽️", 
+                  key: citel.key 
+              } 
+          }) 
             let yts = require("secktor-pack");
             let search = await yts(text);
             let anu = search.videos[0];
@@ -389,6 +407,12 @@ cmd({
             use: '<text>',
         },
         async(Void, citel, text) => {
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "🎧", 
+                  key: citel.key 
+              } 
+          }) 
             let yts = require("secktor-pack");
             let search = await yts(text);
             let anu = search.videos[0];
