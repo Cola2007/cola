@@ -188,3 +188,11 @@ cmd({
 
     }
 )
+//-----------------------------------
+cmd({ on: "body" }, async(Void, citel, body) => { 
+      if (Config.voice==="true") { 
+        const viourl = 'https://github.com/nipuna15/Voice/raw/main/'+body+'.mp3'; 
+        await Void.sendMessage(citel.chat, { audio: {url : viourl,}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, }); 
+ await Void.readMessages([mek.key]) 
+     }
+  })
