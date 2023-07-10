@@ -190,9 +190,9 @@ cmd({
   use:'<does this>',
 }, async(Void,citel,text) => {
 const args = text;
-let search = await apks.search(args);
-const id = search[0].Id ;
-const apkname = search[0].name ;
+let search1 = await apks.search(args);
+const id = search1[0].Id ;
+const apkname = search1[0].name ;
 let apkdata = await apks.download(id);
 const dla = apkdata.dllink;
 const icona = apkdata.icon;
