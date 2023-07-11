@@ -189,8 +189,9 @@ cmd({
  const icona = apkdata.icon; 
  const lastup = apkdata.lastup; 
  const size = apkdata.size;
- const rep = "*📲Blue ⃝Lion⃟ Bot APK Downloader📱*/n/n*🔍 Name :* ${apkname}/n/n*📀 Package Name :* ${id1}/n/n*📲 Update On :* ${lastup}/n/n*📊 Size :* ${size}";
-await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,}) 
+ const rep = `*📲Blue ⃝Lion⃟ Bot APK Downloader📱*/n/n*🔍 Name :* ${apkname}/n/n*📀 Package Name :* ${id1}/n/n*📲 Update On :* ${lastup}/n/n*📊 Size :* ${size}` ;
+
+await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
  return Void.sendMessage(citel.chat,{ 
      document: { 
          url: dla, 
