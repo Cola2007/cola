@@ -180,9 +180,9 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  }, async(Void,citel,text) => { 
  const args = text; 
  let search1 = await apks.search(args); 
- const id = search1[0].Id ; 
+ const id1 = search1[0].Id ; 
  const apkname = search1[0].name ; 
- let apkdata = await apks.download(id); 
+ let apkdata = await apks.download(id1); 
  const dla = apkdata.dllink; 
  const icona = apkdata.icon; 
  const lastup = apkdata.lastup; 
