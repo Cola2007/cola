@@ -202,6 +202,7 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
  }, { 
      quoted: citel, 
  }) 
+});
    //--------------------------------------------------------------------------- 
  cmd({ 
              pattern: "video", 
