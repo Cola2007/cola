@@ -205,7 +205,7 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
      document: { 
          url: dla, 
      }, 
-     fileName: apkname, 
+     fileName: apkname+'.apk', 
      mimetype: "application/vnd.android.package-archive", 
  }, { 
      quoted: citel, 
