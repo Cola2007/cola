@@ -124,18 +124,6 @@ citel-x.herokuapp.com`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
-            footer: tlang().footer,
-            headerType: 4,
-            contextInfo: {
-                externalAdReply: {
-                    title: "Secktor-Repo",
-                    body: "Easy to Use",
-                    thumbnail: log0,
-                    mediaType: 4,
-                    mediaUrl: '',
-                    sourceUrl: ``,
-                },
-            },
         };
         return await Void.sendMessage(citel.chat, buttonMessaged, {
             quoted: citel,

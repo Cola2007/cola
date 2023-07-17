@@ -66,9 +66,6 @@
      "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")", 
         "value": "94714188730" 
    }, 
-    "SESSION_ID": { 
-     "description": "Please put your SESSION_ID here,if you don't have visit" 
-   }, 
      "OPENAI_API_KEY": { 
      "description": "Please put your OPENAI api key here.Get it from beta.openai.com ", 
         "value": "Replace Me(optional)", 
