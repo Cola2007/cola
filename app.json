@@ -14,6 +14,9 @@
      "description": "Alive message for bot", 
       "required" :false 
      }, 
+     "SESSION_ID": {
+      "description": "Please put your SESSION_ID here"
+    },
      "AUTO_STATUS_SAVER": { 
        "description": "Automatically saves status of every person and sends in log number.", 
         "required" :false 
