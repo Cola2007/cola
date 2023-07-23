@@ -190,7 +190,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
     cmd({
-        pattern: "news",
+        pattern: "news/esana",
         category: "news",
         desc: "Searches news",
         use: '<text>',
@@ -208,6 +208,33 @@ cmd({
                 await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
 })
 //--------------------------------------------------------------------------
+cmd({ 
+     pattern: "hirunews", 
+     alias: ["hiru","news/hiru"], 
+     react: "📜", 
+     desc: "", 
+     category: "news", 
+     use: '.hirunews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+  
+  
+           await Void.sendMessage(citel.chat, { text:`Hello ${citel.pushname ||  '\n'} I Am Finding sri lanka  News Update Details..` }, { quoted: citel } )     
+  
+           const images = `${hirunews.image}` 
+            const title = `${hirunews.title}` 
+            const date = `${hirunews.time}` 
+            const news = `${hirunews.desc}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n${ title }\n\n ${ news }\n\n${date}`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
+//-----------------------------------------
 cmd({
             pattern: "couplepp",
             category: "search",
