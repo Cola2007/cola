@@ -51,47 +51,41 @@ Secktor.cmd({
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 const vdf = Config.ownername
                 let total = await sck1.countDocuments()
-                let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
-                str +=
-                    '```' + `│ ╭──────◇🍧◇──────«
-│ │ 👤User:- ${citel.pushName}
-│ │ 💝Theme:- ${tlang().title}
-│ │ 🍧Prefix:- [ ${prefix} ]
-│ │ 🎧Owner:- ${vdf}
-│ │ 🎵Plugins:- ${commands.length}
-│ │ 🧓Users:- ${total}
-│ │ 🆙Uptime:- ${runtime(process.uptime())}
-│ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}
-│ │ ☯️Time:- ${time}
-│ │ ❣️Date:- ${date}
-│ ╰──────●💕●──────»
-╰───────────────⊷\n
-` + '```'
-                str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
-                for (const category in cmds) {
-                    str += `
-┃  ╭──────◑❤️◑──────«
-┃  │     🎧  ${tiny(category)} 🎧
-┃  ╰┬─────◈💕◈──────»
-┃  ┌┤\n`
-                    for (const plugins of cmds[category]) {
-                        str += `┃  │ ◉ ${plugins}\n`
-                    }
-                    str += `┃  ╰────────────◆`
-                }
-
-                str += `\n╰━━━━━━━━━━──⊷\n`
-                let buttonMessaged = {
-                    image: { url: THUMB_IMAGE },
-                    caption: str,
-                    footer: tlang().title,
-                    headerType: 4
-                };
-await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
-                return await Void.sendMessage(citel.chat, buttonMessaged);
-            }
-        }
-    )
+                                let str = `╭━━━━《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》━━━━━⊷\n` 
+                 str += 
+                     '```' + `┃ ╭━━━━━━◇🍧◇━━━━━━« 
+ ┃ ┃ 👤User:- ${citel.pushName} 
+ ┃ ┃ 💝Theme:- ${tlang().title} 
+ ┃ ┃ 🎧Owner:- ${vdf} 
+ ┃ ┃ 🆙Uptime:- ${runtime(process.uptime())} 
+ ┃ ┃ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())} 
+ ┃ ╰━━━━━━●💕●━━━━━━» 
+ ╰━━━━━━━━━━━━━━━⊷\n 
+ ` + '```' 
+                 str += `╭━━━『 ` + fancytext('Commands', 57) + `』━━◆` 
+                 for (const category in cmds) { 
+                     str += ` 
+ ┃  ╭━━━━━━◑❤️◑━━━━━━« 
+ ┃  ┃     🎧  ${tiny(category)} 🎧 
+ ┃  ╰┬━━━━━◈💕◈━━━━━━» 
+ ┃  ┌┤\n` 
+                     for (const plugins of cmds[category]) { 
+                         str += `┃  ┃ ◉ ${plugins}\n` 
+                     } 
+                     str += `┃  ╰━━━━━━━━━━━━◆` 
+                 } 
+  
+                 str += `\n╰━━━━━━━━━━━━⊷\n` 
+                 let buttonMessaged = { 
+                     image: { url: THUMB_IMAGE }, 
+                     caption: str, 
+                     footer: tlang().title, 
+                     headerType: 4 
+                 }; 
+ await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, }); 
+                 return await Void.sendMessage(citel.chat, buttonMessaged); 
+             } 
+         }
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "list",
