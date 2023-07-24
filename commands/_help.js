@@ -86,6 +86,7 @@ Secktor.cmd({
                  return await Void.sendMessage(citel.chat, buttonMessaged); 
              } 
          }
+)
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "list",
