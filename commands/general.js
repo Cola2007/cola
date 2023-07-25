@@ -88,16 +88,17 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://api.github.com/repos/SamPandey001/Secktor-Md')
+        let { data } = await axios.get('https://api.github.com/repos/nipuna15/Blue-Lion-V2')
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* citel-x.herokuapp.com/repo
-*Group:* citel-x.herokuapp.com/support
+*🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
+*Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
+*Group2:* https://chat.whatsapp.com/GkYZvcVSUSR1WBvl6rBpiw
 *Deploy Your Own:*-
-citel-x.herokuapp.com`
+https://github.com/nipuna15/Blue-Lion-V2`
         let buttonMessaged = {
-            image: { url: await botpic() },
+            image: { url: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg' },
             caption: cap,
         };
         return await Void.sendMessage(citel.chat, buttonMessaged, {
