@@ -192,10 +192,10 @@ cmd({
  
  cmd({  
       pattern: "nasa",  
-      alias: ["news"],  
+      alias: ["news/nasa"],  
       react: "🀄",  
       desc: "",  
-      category: "download",  
+      category: "news",  
       use: '.hirunews',  
       filename: __filename  
   },  
