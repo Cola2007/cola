@@ -192,7 +192,7 @@ cmd({
  
  cmd({  
       pattern: "nasa",  
-      alias: ["nasanews"],  
+      alias: ["news"],  
       react: "🀄",  
       desc: "",  
       category: "download",  
