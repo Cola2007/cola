@@ -93,10 +93,13 @@ cmd({
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
 *🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
+
 *Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
+
 *Group2:* https://chat.whatsapp.com/GkYZvcVSUSR1WBvl6rBpiw
+
 *Deploy Your Own:*-
-https://github.com/nipuna15/Blue-Lion-V2`
+https://nipuna15.github.io/blue-lion-web/`
         let buttonMessaged = {
             image: { url: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg' },
             caption: cap,
