@@ -91,7 +91,9 @@ cmd({
         let { data } = await axios.get('https://api.github.com/repos/nipuna15/Blue-Lion-V2')
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
+
 *🍽️ Forks:* ${data.forks_count} forks
+
 *🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
 
 *Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
