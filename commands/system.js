@@ -270,6 +270,23 @@ ${alivemessage}
                 footer: tlang().footer,
                 headerType: 4,
             };
+await Void.sendMessage(citel.chat, 
+ { text: teks, 
+ contextInfo:{ 
+ mentionedJid:[sender], 
+ forwardingScore: 9999999, 
+ isForwarded: true,  
+ "externalAdReply": { 
+ "showAdAttribution": true, 
+ "containsAutoReply": true, 
+ "title": `Blue-Lion`, 
+ "body": `${alivtxt}`, 
+ "previewType": "PHOTO", 
+ "thumbnailUrl": await botpic(), 
+ "thumbnail":await botpic(), 
+ "sourceUrl": `${https://nipuna15.github.io/blue-lion-web/}`}}}, 
+ { quoted: citel}) 
+ }
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
             });     
