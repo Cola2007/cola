@@ -278,7 +278,7 @@ function lastn() {
             const id = `${hirunews.id}`
             const date1 = `${hirunews.time}` 
             const news1 = `${hirunews.desc}` 
-            
+           } 
  catch(e){ 
  console.log(e) 
  }
