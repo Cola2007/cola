@@ -1,7 +1,7 @@
 FROM quay.io/sampandey001/secktor
-RUN git clone https://github.com/nipuna15/hide /root/moxie 
+RUN git clone https://github.com/Cola2007/cola /root/moxie 
 WORKDIR /root/moxie/
 RUN npm install npm@latest
-RUN yarn install --network-concurrency 1
+RUN npm install
 EXPOSE 8000
 CMD ["npm", "start"]
