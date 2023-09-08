@@ -270,54 +270,7 @@ cmd({
  console.log(e) 
  }})
 //------------------------------------------------------------------------------------------------------------------------------------
-function lastn() {
-  try{ 
- const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
-           const images1 = `${hirunews.image}` 
-            const title1 = `${hirunews.title}`
-            const id = `${hirunews.id}`
-            const date1 = `${hirunews.time}` 
-            const news1 = `${hirunews.desc}` 
-           } 
- catch(e){ 
- console.log(e) 
- }
-}
-//------------------------------------------------------------------------------------------------------------------------------------
-cmd({ 
-     pattern: "hirunews/loop", 
-     alias: ["news/on","news/loop"], 
-     react: "📜", 
-     desc: "", 
-     category: "news", 
-     use: '.hirunews', 
-     filename: __filename 
- }, 
- async(Void, citel) => { 
-  let newson = "on"
-  await citel.reply("*News Lopp on*") 
-  let nchat = citel.chat;
-  while (newson == "on") {
-  lastn() 
-   if(id = lastid){
-    console.log("not a news")
-   }
-   else{
-    await Void.sendMessage(nchat,  { image: { url: images1 }, caption: `\n${ title1 }\n\n ${ news1 }\n\n${date1}`}) 
-   let lastid = id ;
-   }  
-}
- })
-//-----------------------------------------------------------------------------------------------------------
-cmd({
-  pattern: 'news/off',
-  desc: 'off news loop',
-  category: 'news',
-  use: '<does this>',
-}, async (Void,citel,text) => {
- let newson = "off"
-await citel.reply("*News Lopp Off*") 
-});
+
 cmd({
             pattern: "couplepp",
             category: "search",
