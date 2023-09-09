@@ -1,5 +1,5 @@
 const { tlang, cmd, sleep, getBuffer, prefix, Config } = require('../lib')
-const ytdl = require('ytdl-secktor')
+const ytdl = require('youtubedl-core')
 const yts = require('secktor-pack')
 const fs = require('fs')
 var videotime = 60000 // 1000 min
