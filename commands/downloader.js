@@ -1,7 +1,6 @@
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib') 
  const { mediafire } = require("../lib/mediafire.js"); 
  const cheerio = require('cheerio'); 
- const youtubedl = require('youtubedl-core');
  const fbInfoVideo = require('fb-info-video'); 
  const request = require('request'); 
  const axios= require('axios'); 
