@@ -82,7 +82,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  cmd({ 
              pattern: "facebook", 
              alias :  ['fb','fbdl'], 
-             desc: "Downloads fb videos  .", 
+             desc: "Downloads fb videos.", 
              category: "downloader", 
              filename: __filename, 
              use: '<add fb url.>' 
@@ -211,7 +211,36 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
      quoted: citel, 
  }) 
 });
-   //--------------------------------------------------------------------------- 
+
+ //---------------------------------------------------------------------------  
+
+ cmd({ 
+    pattern: 'gdrive', 
+    desc: 'Download File from Google Drive', 
+    category: 'downloader', 
+    use:'<does this>', 
+  }, async(Void,citel,text) => { 
+    if (!text) return citel.reply('Please Enter the Google Drive link.') 
+    const dg = require('api-dylux')
+    let res = await dg.GDriveDl(text)
+  await citel.reply(`
+  🧧 Google Drive Downloder*
+
+  💠 *Nama:* ${res.fileName}
+  💠 *Size:* ${res.fileSize}
+  💠 *Type:* ${res.mimetype}`)
+
+  return Void.sendMessage(citel.chat,{ 
+      document: { 
+          url: res.downloadUrl, 
+      }, 
+      fileName: res.fileName, 
+      mimetype: res.mimetype, 
+  }, { 
+      quoted: citel, 
+  }) 
+ });
+    //--------------------------------------------------------------------------- 
  cmd({ 
              pattern: "video", 
              desc: "Downloads video from yt.", 
