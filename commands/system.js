@@ -250,8 +250,10 @@ Void.sendMessage(citel.chat, {
           await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
             const alivtxt = `
-*Hello, ${citel.pushName},*
-This is  ${tlang().title}.
+🤗 *Hello, ${citel.pushName},*
+
+🥽 This is  ${tlang().title}.
+
 ${alivemessage}
 
 🍧Version:-* 0.0.2
@@ -261,7 +263,7 @@ ${alivemessage}
 
 ● Type ${prefix}menu for my command list.
 
-📗Powered by ${Config.ownername}`;
+🎨 Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
