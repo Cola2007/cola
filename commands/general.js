@@ -24,18 +24,17 @@ cmd({
     filename: __filename,
 },
 async(Void, citel,text) => {
-  const mg = text;
-const configuration = new Configuration({
-  apiKey: Config.OPENAI_API_KEY,
+  let mg = text;
+ 
+const openai = new OpenAI({
+  apiKey: Config.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
 });
-const openai = new OpenAIApi(configuration);
+ const completion = await openai.chat.completions.create({
+    messages: [{ role: 'user', content: mg }],
+    model: 'gpt-3.5-turbo',
+  });
 
-const completion = await openai.createChatCompletion({
-  model: "gpt-3.5-turbo",
-  messages: [{"role": "system", "content": `${mg}`}, {role: "user", content: "Hello world"}],
-});
-
-  return await  citel.reply(data.choices[0].message.content)
+  return await  citel.reply(completion.choices)
 }
 )
 
