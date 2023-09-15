@@ -15,6 +15,7 @@ const speed = require('performance-now')
 const fetch = require('node-fetch');
 const { Configuration, OpenAIApi } = require("openai");
 //---------------------------------------------------------------------------
+
 cmd({
     pattern: "chat",
     alias :['gpt','ai'],
@@ -24,17 +25,33 @@ cmd({
     filename: __filename,
 },
 async(Void, citel,text) => {
-  let mg = text;
- 
-const openai = new OpenAI({
-  apiKey: Config.OPENAI_API_KEY, // defaults to process.env["OPENAI_API_KEY"]
+ try {
+if (Config.OPENAI_API_KEYi === '') return citel.reply("Api key limi exceeded");
+const configuration = new Configuration({
+apiKey: Config.OPENAI_API_KEY,
 });
- const completion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: mg }],
-    model: 'gpt-3.5-turbo',
-  });
-
-  return await  citel.reply(completion.choices)
+const openai = new OpenAIApi(configuration);
+const response = await openai.createCompletion({
+model: "text-davinci-003",
+prompt: text,
+temperature: 0.3,
+max_tokens: 2000,
+top_p: 1.0,
+frequency_penalty: 0.0,
+presence_penalty: 0.0,
+});
+citel.reply(`${response.data.choices[0].text}`);
+} catch (error) {
+if (error.response) {
+console.log(error.response.status);
+console.log(error.response.data);
+console.log(`${error.response.status}\n\n${error.response.data}`);
+} else {
+console.log(error);
+citel.reply("Sorry, there seems to be an error.");
+}
+}
+  
 }
 )
 
@@ -51,30 +68,25 @@ async(Void, citel,text,{isCreator}) =>
 //if (!isCreator) return citel.reply(tlang().owner)
 if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
 if (!text) return citel.reply(`*Give Me A Query To Get Dall-E Reponce ?*`); 
-const imageSize = '256x256'
-const apiUrl = 'https://api.openai.com/v1/images/generations';
-const response = await fetch(apiUrl, {
-method: 'POST',
-headers: {
-  'Content-Type': 'application/json',
-  'Authorization': `Bearer ${Config.OPENAI_API_KEY}`
-},
-body: JSON.stringify({
-  model: 'image-alpha-001',
-  prompt: text,
-  size: imageSize ,
-  response_format: 'url'
-})
-});
+try {
+    const { Configuration, OpenAIApi } = require('openai')
+    const configuration = new Configuration({
+    apiKey: Config.OPENAI_API_KEY,
+    });
+    const openai = new OpenAIApi(configuration);
+    const response = await openai.createImage({
+    prompt: text,
+    n: 3,
+    size: "512x512",
+    });
+    //console.log(response.data.data[0].url)
+    
+    Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
+    } catch (err) {
+    console.log(err);
+    citel.reply("Sorry, there seems to be an error :");
+    }
 
-const data = await response.json();
-let buttonMessage = {
-    image:{url:data.data[0].url},
-    caption : '*---Your DALL-E Result---*'
-
-}
-
-Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 }
 )
 
