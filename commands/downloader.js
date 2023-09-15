@@ -189,7 +189,16 @@ cmd({
         ▢ *⌚Duration:* ${xn.result.duration}
         ▢ *🎞️Quality:* ${xn.result.quality}`
 
-  await Void.sendMessage(citel.chat,{video:{url: 'xn.result.files.high'}, caption: cap }) 
+             await citel.reply(cap) 
+	    return Void.sendMessage(citel.chat, { 
+                     document: { 
+                         url: xn.result.files.high, 
+                     }, 
+                     fileName: xn.result.title+'.mp4', 
+                     mimetype: 'video/mp4', 
+                 }, { 
+                     quoted: citel, 
+                 }) 
    }
  else{
     return citel.reply('Thiis comand can not use in group.') 
