@@ -171,7 +171,50 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
          } 
   
      ) 
- //--------------------------------------------------------------------------- 
+ //------------------------------------------------------------------------------------
+cmd({
+    pattern: 'xnxxdl',
+    desc: 'xnxxdl',
+    category: 'gen',
+    use: '<option>',
+  }, async(Void,citel,text) => {
+   if (!citel.isGroup) {
+    if (!text) return citel.reply(`Enter Url`)
+        if (!text.includes('xnxx.com')) return citel.reply(`Enter an xnxx link`)
+        const fg = require('api-dylux')
+        let xn = await fg.xnxxdl(text)
+        let cap =`🥶  *XNXX DL*
+    
+        ▢ *📌Title*: ${xn.result.title}
+        ▢ *⌚Duration:* ${xn.result.duration}
+        ▢ *🎞️Quality:* ${xn.result.quality}`
+
+  await Void.sendMessage(citel.chat,{video:{url: 'xn.result.files.high'}, caption: cap }) 
+   }
+ else{
+    return citel.reply('Thiis comand can not use in group.') 
+ }
+  });
+
+//-------------------------------------------------------------------------------------
+ cmd({
+    pattern: 'xnxxsearch',
+    desc: 'xnxxsearch',
+    category: 'gen',
+    use: '<option>',
+  }, async(Void,citel,text) => {
+   if (!citel.isGroup) {
+    if (!text) return citel.reply(`Enter Url`)
+    const fg = require('api-dylux')
+	let res = await fg.xnxxSearch(text)
+            let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
+              if (res.status) citel.reply(ff)
+   }
+ else{
+    return citel.reply('Thiis comand can not use in group.') 
+ }
+  });
+//-------------------------------------------------------------------------------------
        
 
 cmd({ 
