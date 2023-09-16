@@ -174,6 +174,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  //------------------------------------------------------------------------------------
 cmd({
     pattern: 'xnxxdl',
+     alias :  ['xxx','sex'], 
     desc: 'xnxxdl',
     category: 'gen',
     use: '<option>',
@@ -205,9 +206,10 @@ cmd({
  }
   });
 
-//-------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
  cmd({
     pattern: 'xnxxsearch',
+     alias :  ['xxxs ','sexs','xxxsearch'], 
     desc: 'xnxxsearch',
     category: 'gen',
     use: '<option>',
