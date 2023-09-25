@@ -9,8 +9,6 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  const ytdl = require('youtubedl-core') 
  const fs = require('fs-extra') 
  const apks  = require('aptoide-scraper'); 
-const ttdl = require('tiktok-scraper-nowatermarks')
-  
  var videotime = 60000 // 1000 min 
  var dlsize = 1000 // 1000mb 
    //-------------------------------------------------------------------------------------------------------
