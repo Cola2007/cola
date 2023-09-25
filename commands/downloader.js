@@ -13,9 +13,6 @@ const ttdl = require('tiktok-scraper-nowatermarks')
  var videotime = 60000 // 1000 min 
  var dlsize = 1000 // 1000mb 
    //-------------------------------------------------------------------------------------------------------
-const axios = require("axios");
-const cheerio = require("cheerio");
-
 const clean = (data) => {
   let regex = /(<([^>]+)>)/gi;
   data = data.replace(/(<br?\s?\/>)/gi, " \n");
@@ -26,7 +23,7 @@ async function shortener(url) {
   return url;
 }
 
-exports.Tiktok = async(query) => {
+Tiktok = async(query) => {
   let response = await axios("https://lovetik.com/api/ajax/search", {
     method: "POST",
     data: new URLSearchParams(Object.entries({ query })),
@@ -136,7 +133,7 @@ cmd({
 
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-	let video = await shortener(text);
+	let video = await Tiktok(text);
     return await Void.sendMessage(citel.chat, {video : {url : video.result.nowm  } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
 }) 
      //--------------------------------------------------------------------------- 
