@@ -1,5 +1,6 @@
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib') 
  const { mediafire } = require("../lib/mediafire.js"); 
+ const {Tiktok} = require("../lib/ttdl.js"); 
  const cheerio = require('cheerio'); 
  const fbInfoVideo = require('fb-info-video'); 
  const request = require('request'); 
@@ -13,40 +14,7 @@ const ttdl = require('tiktok-scraper-nowatermarks')
  var videotime = 60000 // 1000 min 
  var dlsize = 1000 // 1000mb 
    //-------------------------------------------------------------------------------------------------------
-const clean = (data) => {
-  let regex = /(<([^>]+)>)/gi;
-  data = data.replace(/(<br?\s?\/>)/gi, " \n");
-  return data.replace(regex, "");
-};
 
-async function shortener(url) {
-  return url;
-}
-
-Tiktok = async(query) => {
-  let response = await axios("https://lovetik.com/api/ajax/search", {
-    method: "POST",
-    data: new URLSearchParams(Object.entries({ query })),
-  });
-
-  result = {};
-
-  result.creator = "YNTKTS";
-  result.title = clean(response.data.desc);
-  result.author = clean(response.data.author);
-  result.nowm = await shortener(
-    (response.data.links[0].a || "").replace("https", "http")
-  );
-  result.watermark = await shortener(
-    (response.data.links[1].a || "").replace("https", "http")
-  );
-  result.audio = await shortener(
-    (response.data.links[2].a || "").replace("https", "http")
-  );
-  result.thumbnail = await shortener(response.data.cover);
-  return result;
-}
-   //-------------------------------------------------------------------------------------------------------
    cmd({ 
      pattern: "yts", 
      desc: "Gives descriptive info of query from youtube..", 
