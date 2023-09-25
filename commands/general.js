@@ -113,21 +113,9 @@ cmd({
 
 *Deploy Your Own:*-
 https://nipuna15.github.io/blue-lion-web/`
-        let buttonMessaged = { 
-             image: { url: "https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg" }, 
+                let buttonMessaged = { 
+             image: { url: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg' }, 
              caption: cap, 
-             footer: "Blue-Lion", 
-             headerType: 4, 
-             contextInfo: { 
-                 externalAdReply: { 
-                     title: "Blue-Lion-Repo", 
-                     body: "The World Best Bot", 
-                     thumbnail: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg', 
-                     mediaType: 4, 
-                     mediaUrl: '', 
-                     sourceUrl: `https://github.com/nipuna15/Blue-Lion-V2`, 
-                 }, 
-             }, 
          };
         return await Void.sendMessage(citel.chat, buttonMessaged, {
             quoted: citel,
