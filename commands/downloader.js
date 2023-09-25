@@ -12,7 +12,44 @@ const ttdl = require('tiktok-scraper-nowatermarks')
   
  var videotime = 60000 // 1000 min 
  var dlsize = 1000 // 1000mb 
-   //--------------------------------------------------------------------------- 
+   //-------------------------------------------------------------------------------------------------------
+const axios = require("axios");
+const cheerio = require("cheerio");
+
+const clean = (data) => {
+  let regex = /(<([^>]+)>)/gi;
+  data = data.replace(/(<br?\s?\/>)/gi, " \n");
+  return data.replace(regex, "");
+};
+
+async function shortener(url) {
+  return url;
+}
+
+exports.Tiktok = async(query) => {
+  let response = await axios("https://lovetik.com/api/ajax/search", {
+    method: "POST",
+    data: new URLSearchParams(Object.entries({ query })),
+  });
+
+  result = {};
+
+  result.creator = "YNTKTS";
+  result.title = clean(response.data.desc);
+  result.author = clean(response.data.author);
+  result.nowm = await shortener(
+    (response.data.links[0].a || "").replace("https", "http")
+  );
+  result.watermark = await shortener(
+    (response.data.links[1].a || "").replace("https", "http")
+  );
+  result.audio = await shortener(
+    (response.data.links[2].a || "").replace("https", "http")
+  );
+  result.thumbnail = await shortener(response.data.cover);
+  return result;
+}
+   //-------------------------------------------------------------------------------------------------------
    cmd({ 
      pattern: "yts", 
      desc: "Gives descriptive info of query from youtube..", 
@@ -99,8 +136,8 @@ cmd({
 
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-	let video = await ttdl(text);
-    return await Void.sendMessage(citel.chat, {video : {url : video.url } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
+	let video = await shortener(text);
+    return await Void.sendMessage(citel.chat, {video : {url : video.result.nowm  } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
 }) 
      //--------------------------------------------------------------------------- 
  cmd({ 
