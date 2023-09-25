@@ -8,23 +8,10 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  const ytdl = require('youtubedl-core') 
  const fs = require('fs-extra') 
  const apks  = require('aptoide-scraper'); 
+const ttdl = require('tiktok-scraper-nowatermarks')
   
  var videotime = 60000 // 1000 min 
  var dlsize = 1000 // 1000mb 
- //--------------------------------------------------------------------------- 
-async function tiktokdl (url) { 
-    const getpage = await axios.get("https://savetik.co/en?q="+ url); 
-    const $ = cheerio.load(getpage.data); 
-    let vdeourl = $("#search-result > div.video-data > div > div.tik-right > div > p:nth-child(3) > a").attr("href"); 
-    let mp3url = $("#search-result > div.video-data > div > div.tik-right > div > p:nth-child(4) > a").attr("href");
-    if ($.status) { 
-        return { 
-            status: true,
-            video: vdeourl,
-            audio: mp3url
-        }; 
-    } else return { status: false }; 
-}; 
    //--------------------------------------------------------------------------- 
    cmd({ 
      pattern: "yts", 
@@ -112,13 +99,8 @@ cmd({
 
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-let txt = text ? text.split(" ")[0]:''; 
-const { status , video, audio } = await tiktokdl(txt) 
-if (status){
-    await Void.sendMessage(citel.chat, { audio: {url : audio,}, mimetype: 'audio/mpeg' }, { quoted: citel });
-    return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
- } 
-else return await citel.reply("Error While Downloading Your Video")  
+	const video = await ttdl(url);
+    return await Void.sendMessage(citel.chat, {video : {url : video.url } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
 }) 
      //--------------------------------------------------------------------------- 
  cmd({ 
