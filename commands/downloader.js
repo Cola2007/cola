@@ -82,32 +82,21 @@ async function tiktokdl (url) {
                    key: citel.key  
                }  
            })  
- if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`); 
- fbInfoVideo.getInfo(text) 
-   .then(info =>{ 
- let vurl=info.video.url_video; 
-  
-       let data  ="*Video Name     :* "+  info.video.title; 
-           data +="\n*Video Views    :* "+  info.video.view; 
-           data +="\n*Video Comments :* "+  info.video.comment; 
-           data +="\n*Video Likes    :* "+info.video.reaction.Like ; 
-  
-                         let buttonMessage = { 
-                         video: {url:vurl}, 
+ if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`);
+		  try {
+        const result = await fbInfoVideo(text);
+        console.log("Result:", result);
+			   let buttonMessage = { 
+                         video: {url:result.hd}, 
                          mimetype: 'video/mp4', 
-                         fileName: info.video.title+`.mp4`, 
-                         caption :"     *FACEBOOK DOWNLOADER*  \n"+data 
-  
+                         fileName: result.title+`.mp4`, 
+                         caption :"     *FACEBOOK DOWNLOADER* "
                      } 
                   Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
-  
-  
-  
- }) 
-   .catch(err =>{ 
-             citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
-             console.error(err); 
-           }) 
+    } catch (error) {
+        console.log("Error:", error);
+    } 
+
   }) 
   
  //--------------------------------------------------------------------------- 
