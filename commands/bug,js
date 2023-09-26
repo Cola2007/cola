@@ -1,9 +1,0 @@
-
-
-cmd({
-  pattern: 'bug1',
-  desc: 'Sends text',
-  category: 'gen',
-  use: '<does this>',
-}, async (Void,citel,text) => {
-await citel.reply("*TEXT HERE*")
