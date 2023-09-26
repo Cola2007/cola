@@ -316,6 +316,9 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
             }
                
     else {
+        const getRandom = (ext) => { 
+            return `${Math.floor(Math.random() * 10000)}${ext}`; 
+        }; 
         let infoYt = await ytdl.getInfo(urlYt); 
         if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
         let titleYt = infoYt.videoDetails.title; 
@@ -557,6 +560,9 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
             } 
             else{
             let infoYt = await ytdl.getInfo(urlYt); 
+            const getRandom = (ext) => { 
+                return `${Math.floor(Math.random() * 10000)}${ext}`; 
+            }; 
             //30 MIN 
             if (infoYt.videoDetails.lengthSeconds >= videotime) { 
                 reply(`❌ I can't download that long video!`); 
