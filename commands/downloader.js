@@ -99,10 +99,8 @@ cmd({
 
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-const domain = 'https://www.tikwm.com/';
-let video = await axios.post('https://www.tikwm.com/api/?url='+text+',&count= 12,&cursor= 0,&web= 1,&hd= 1')
-
-    return await Void.sendMessage(citel.chat, {video : {url : domain+video.data.hdplay } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
+	let video = await tiktokDL(text);
+    return await Void.sendMessage(citel.chat, {video : {url : video.nowm  } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
 }) 
      //--------------------------------------------------------------------------- 
  cmd({ 
