@@ -1,6 +1,5 @@
 const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib') 
- const { mediafire } = require("../lib/mediafire.js"); 
- const { tiktok } = require("../lib/ttdl.js"); 
+ const { mediafire } = require("../lib/mediafire.js");  
  const cheerio = require('cheerio'); 
  const fbInfoVideo = require('fb-info-video'); 
  const request = require('request'); 
@@ -111,9 +110,17 @@ cmd({
 
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-	let resul = await tiktok(text);
-    return await Void.sendMessage(citel.chat, {video : {url : 'https://www.tikwm.com/' + resul.result} , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
-}) 
+const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
+
+let tiktok_url = text
+
+TiktokDL(tiktok_url).then((result) => {
+  console.log(result)
+  return await Void.sendMessage(citel.chat, {video : {url : result.result?.video? } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
+})
+    
+})
+
      //--------------------------------------------------------------------------- 
  cmd({ 
              pattern: "tts", 
