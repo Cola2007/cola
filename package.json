@@ -17,6 +17,8 @@
                         "anime-character-random": "latest", 
                         "@sl-code-lords/esana-news":"latest", 
                         "aptoide-scraper": "latest", 
+                       
+"@tobyg74/tiktok-api-dl": "latest", 
                         "google-play-scraper": "latest", 
                         "axios": "^0.24.0", 
                         "cheerio": "^1.0.0-rc.10", 
