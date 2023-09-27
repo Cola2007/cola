@@ -114,7 +114,7 @@ const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
 
 let result = TiktokDL(text)
 
-  return await Void.sendMessage(citel.chat, {video : {url : result.result?.video? } , caption: "POWERD BY BLUE-LION" } , { quoted : citel })
+  return await Void.sendMessage(citel.chat, {video : {url : result.result?.video?} } , caption: "POWERD BY BLUE-LION" } , { quoted : citel })
     
 })
 
