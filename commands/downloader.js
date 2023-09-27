@@ -100,7 +100,7 @@ cmd({
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
 	let resul = await tiktok(text);
-    return await Void.sendMessage(citel.chat, {video : {url : resul.result} , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
+    return await Void.sendMessage(citel.chat, {video : {url : 'https://www.tikwm.com/' + resul.result} , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
 }) 
      //--------------------------------------------------------------------------- 
  cmd({ 
