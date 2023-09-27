@@ -112,12 +112,9 @@ async(Void, citel, text) => {
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
 const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
 
-let tiktok_url = text
+let result = TiktokDL(text)
 
-TiktokDL(tiktok_url).then((result) => {
-  console.log(result)
-  return await Void.sendMessage(citel.chat, {video : {url : result.result?.video? } , caption: "POWERD BY BLUE-LION" } , {quoted : citel });
-})
+  return await Void.sendMessage(citel.chat, {video : {url : result.result?.video? } , caption: "POWERD BY BLUE-LION" } , { quoted : citel })
     
 })
 
