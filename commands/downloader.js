@@ -73,13 +73,25 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
 		  try {
         const result = await fbInfoVideo(text);
         console.log("Result:", result);
-			   let buttonMessage = { 
-                         video: {url:result.hd}, 
-                         mimetype: 'video/mp4', 
-                         fileName: result.title+`.mp4`, 
-                         caption :"     *FACEBOOK DOWNLOADER* "
-                     } 
-                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+        if (result.hd = ''){
+            let buttonMessage = { 
+                video: {url:result.sd}, 
+                mimetype: 'video/mp4', 
+                fileName: result.title+`.mp4`, 
+                caption :"     *FACEBOOK DOWNLOADER* "
+            } 
+         Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+        }
+        else{
+            let buttonMessage = { 
+                video: {url:result.hd}, 
+                mimetype: 'video/mp4', 
+                fileName: result.title+`.mp4`, 
+                caption :"     *FACEBOOK DOWNLOADER* "
+            } 
+         Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+        }
+			   
     } catch (error) {
         console.log("Error:", error);
     } 
