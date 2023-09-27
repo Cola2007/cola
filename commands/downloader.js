@@ -73,7 +73,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
 		  try {
         const result = await fbInfoVideo(text);
         console.log("Result:", result);
-        if (result.hd = ''){
+        if (result.hd ==''){
             let buttonMessage = { 
                 video: {url:result.sd}, 
                 mimetype: 'video/mp4', 
