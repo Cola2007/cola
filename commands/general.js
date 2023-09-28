@@ -14,6 +14,11 @@ const axios = require('axios')
 const speed = require('performance-now')
 const fetch = require('node-fetch');
 const { Configuration, OpenAIApi } = require("openai");
+const {
+    ChatGpt
+    } = require('chatgpt-scraper');
+    
+   
 //---------------------------------------------------------------------------
 
 cmd({
@@ -26,30 +31,13 @@ cmd({
 },
 async(Void, citel,text) => {
  try {
-if (Config.OPENAI_API_KEYi === '') return citel.reply("Api key limi exceeded");
-const configuration = new Configuration({
-apiKey: Config.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-const response = await openai.createCompletion({
-model: "text-davinci-003",
-prompt: text,
-temperature: 0.3,
-max_tokens: 2000,
-top_p: 1.0,
-frequency_penalty: 0.0,
-presence_penalty: 0.0,
-});
-citel.reply(`${response.data.choices[0].text}`);
+ //await ChatGpt('prompt');
+ const res = await ChatGpt('Hi');
+ console.log(res.response);
+citel.reply(`${res.response}`);
 } catch (error) {
-if (error.response) {
-console.log(error.response.status);
-console.log(error.response.data);
-console.log(`${error.response.status}\n\n${error.response.data}`);
-} else {
 console.log(error);
 citel.reply("Sorry, there seems to be an error.");
-}
 }
   
 }
