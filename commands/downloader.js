@@ -121,8 +121,8 @@ let resul = await TiktokDL(text)
                  mimetype: 'video/mp4',  
                  fileName: `${randomName}`,  
                  caption :`*TIKTOK VIDEO DOWNLOADER*
-                 
-                 🤦‍♀️  username: ${resul.result.author.username}
+
+                 🤦‍♀️ username: ${resul.result.author.username}
 
                  🕓 createTime: ${resul.result.createTime}
 
@@ -145,7 +145,54 @@ let resul = await TiktokDL(text)
          
   
 })
+//--------------------------------------------------------------------------- 
+  
+cmd({ 
+    pattern: "tiktokmp3", 
+    alias :  ['ttmp3','ttmp3dl'], 
+    desc: "Downloads Tiktok Videos Via Url.", 
+    category: "downloader", 
+    filename: __filename, 
+    use: '<add tiktok url.>' 
+}, 
 
+async(Void, citel, text) => { 
+if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
+const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
+const getRandom = (ext) => { 
+                     return `${Math.floor(Math.random() * 10000)}${ext}`; 
+                 };
+     let randomName = getRandom(".mp3"); 
+let resul = await TiktokDL(text)
+            let buttonMessage = {  
+                 audio : {url:`${resul.result.music}`},  
+                 mimetype: 'audio/mpeg',  
+                 fileName: `${randomName}`,  
+                 caption :`*TIKTOK VIDEO DOWNLOADER*
+                 
+                 🤦‍♀️ username: ${resul.result.author.username}
+
+                 🕓 createTime: ${resul.result.createTime}
+
+                 🧨 playCount: ${resul.result.statistics.playCount}
+
+                 💕 downloadCount: ${resul.result.statistics.downloadCount}
+
+                 💫 shareCount: ${resul.result.statistics.shareCount}
+
+                 💌 commentCount: ${resul.result.statistics.commentCount}
+
+                 💝 likeCount: ${resul.result.statistics.likeCount}
+
+                 💘 favoriteCount: ${resul.result.statistics.favoriteCount}
+                 
+                 
+                 *POWERD BY BLUE-LION*`
+             }  
+          return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+         
+  
+})
      //--------------------------------------------------------------------------- 
  cmd({ 
              pattern: "tts", 
