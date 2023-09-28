@@ -6,6 +6,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
  const axios= require('axios'); 
  const googleTTS = require("google-tts-api"); 
  const ytdl = require('youtubedl-core') 
+ const {WebScreenShot,WebPdf,valid_devices} = require('@sl-code-lords/web_screenshot')
  const fs = require('fs-extra') 
  const apks  = require('aptoide-scraper'); 
  var videotime = 60000 // 1000 min 
@@ -152,14 +153,22 @@ cmd({
     filename: __filename,
 },
 async(Void, citel, text) => {
-let limit = 5;
+    if (!text) return citel.reply("```Uhh Please, Give me Url!```");
+    const getRandom = (ext) => { 
+        return `${Math.floor(Math.random() * 10000)}${ext}`; 
+    };
 try {
-if (!text) return citel.reply("```Uhh Please, Give me Url!```");
-let urll = `https://s.vercel.app/api?url=${text.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
-let media  = await getBuffer(urll)
-return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
+    let device = 'desktop' // tablet or phone
+    let full_page = false // true
+    let url = text
+    let randomName = getRandom(".png"); 
+    var data = await WebScreenShot(url,device,full_page)
+    fs.writeFileSync(`./${randomName}`,data)
+ await Void.sendMessage(citel.chat ,{image : fs.readFileSync(`./${randomName}`)} , {quoted:citel} )
+ return fs.unlinkSync(`./${randomName}`)
 }
-catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
+catch (err) { await citel.reply("```Error While Fetching Snapshot```")
+return fs.unlinkSync(`./${randomName}`)}
 }
 )
 //---------------------------------------------------------------------------------------------------------- 
