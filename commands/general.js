@@ -97,7 +97,7 @@ cmd({
 `;
         let buttonMessaged = {
             image: {
-                url: global.THUMB_IMAGE ,
+                url: THUMB_IMAGE ,
             },
             caption: ter,
             footer: tlang().footer,

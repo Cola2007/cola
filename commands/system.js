@@ -266,7 +266,7 @@ ${alivemessage}
 🎨 Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
-                 url:  global.THUMB_IMAGE,
+                 url:  THUMB_IMAGE,
                        },
                 caption: alivtxt,
                 footer: tlang().footer,
