@@ -336,8 +336,7 @@ async(Void, citel, text,{ isCreator }) => {
                              },
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                         await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
+                        return citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
                         }
              }
  
@@ -422,22 +421,8 @@ case 'off':{
 break
 default:{
 let checkgroup = await sck.findOne({ id: citel.chat })
-let buttons = [{
-          buttonId: `${prefix}bot on`,
-          buttonText: {
-              displayText: "Turn On",
-          },
-          type: 1,
-      },
-      {
-          buttonId: `${prefix}bot off`,
-          buttonText: {
-              displayText: "Turn Off",
-          },
-          type: 1,
-      },
-  ];
-  await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
+
+  return citel.reply(`Bot Status in Group: ${checkgroup.botenable});
 }
 }
 })   
