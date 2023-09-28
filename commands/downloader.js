@@ -111,12 +111,15 @@ cmd({
 async(Void, citel, text) => { 
 if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
 const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
-
+const getRandom = (ext) => { 
+                     return `${Math.floor(Math.random() * 10000)}${ext}`; 
+                 };
+     let randomName = getRandom(".mp4"); 
 let result = TiktokDL(text)
             let buttonMessage = {  
                  video: {url:result.result?.video?},  
                  mimetype: 'video/mp4',  
-                 fileName: result.title+`.mp4`,  
+                 fileName: randomName,  
                  caption :"     *POWERD BY BLUE-LION* " 
              }  
           return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
