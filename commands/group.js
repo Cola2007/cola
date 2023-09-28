@@ -356,7 +356,7 @@ cmd({
             try {
                 pfp = await Void.profilePictureUrl(citel.sender, "image");
             } catch (e) {
-                pfp = await botpic();
+                pfp = global.THUMB_IMAGE;
             }
             const profile = `
 *Hii ${citel.pushName},*
@@ -983,7 +983,7 @@ cmd({ on: "text" }, async(Void, citel) => {
         if (Config.levelupmessage !== 'false') {
             await Void.sendMessage(citel.chat, {
                 image: {
-                    url: await botpic(),
+                    url: global.THUMB_IMAGE,
                 },
                 caption: `
 ╔════◇

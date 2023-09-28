@@ -14,10 +14,8 @@ const axios = require('axios')
 const speed = require('performance-now')
 const fetch = require('node-fetch');
 const { Configuration, OpenAIApi } = require("openai");
-const {
-    ChatGpt
-    } = require('chatgpt-scraper');
-    
+const openai = require("@sl-code-lords/openai-chatgpt")
+
    
 //---------------------------------------------------------------------------
 
@@ -30,51 +28,16 @@ cmd({
     filename: __filename,
 },
 async(Void, citel,text) => {
+    if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
  try {
- //await ChatGpt('prompt');
- const res = await ChatGpt('Hi');
- console.log(res.response);
-citel.reply(`${res.response}`);
+ var res= await openai.chatgpt({api_key:Config.OPENAI_API_KEY, message:text})
+ console.log(res.result.message);
+citel.reply(`${res.result.message}`);
 } catch (error) {
 console.log(error);
 citel.reply("Sorry, there seems to be an error.");
 }
   
-}
-)
-
-cmd({
-    pattern: "dalle",
-    alias : ['dall','dall-e','art'],
-    desc: "Create Image by AI",
-    category: "AI",
-    use: '<an astronaut in mud.>',
-    filename: __filename,
-},
-async(Void, citel,text,{isCreator}) => 
-{
-//if (!isCreator) return citel.reply(tlang().owner)
-if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
-if (!text) return citel.reply(`*Give Me A Query To Get Dall-E Reponce ?*`); 
-try {
-    const { Configuration, OpenAIApi } = require('openai')
-    const configuration = new Configuration({
-    apiKey: Config.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-    const response = await openai.createImage({
-    prompt: text,
-    n: 3,
-    size: "512x512",
-    });
-    //console.log(response.data.data[0].url)
-    
-    Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
-    } catch (err) {
-    console.log(err);
-    citel.reply("Sorry, there seems to be an error :");
-    }
-
 }
 )
 
@@ -134,7 +97,7 @@ cmd({
 `;
         let buttonMessaged = {
             image: {
-                url: await botpic(),
+                url: global.THUMB_IMAGE ,
             },
             caption: ter,
             footer: tlang().footer,
