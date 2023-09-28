@@ -120,7 +120,26 @@ let resul = await TiktokDL(text)
                  video: {url:`${resul.result.video}`},  
                  mimetype: 'video/mp4',  
                  fileName: `${randomName}`,  
-                 caption :"*POWERD BY BLUE-LION*" 
+                 caption :`*TIKTOK VIDEO DOWNLOADER*
+                 
+                 🤦‍♀️  username: ${resul.result.author.username}
+
+                 🕓 createTime: ${resul.result.createTime}
+
+                 🧨 playCount: ${resul.result.statistics.playCount}
+
+                 💕 downloadCount: ${resul.result.statistics.downloadCount}
+
+                 💫 shareCount: ${resul.result.statistics.shareCount}
+
+                 💌 commentCount: ${resul.result.statistics.commentCount}
+
+                 💝 likeCount: ${resul.result.statistics.likeCount}
+
+                 💘 favoriteCount: ${resul.result.statistics.favoriteCount}
+                 
+                 
+                 *POWERD BY BLUE-LION*`
              }  
           return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
          
@@ -186,7 +205,7 @@ cmd({
                  }) 
    }
  else{
-    return citel.reply('Thiis comand can not use in group.') 
+    return citel.reply('This comand can not use in group😪.') 
  }
   });
 
@@ -206,7 +225,7 @@ cmd({
               if (res.status) citel.reply(ff)
    }
  else{
-    return citel.reply('Thiis comand can not use in group.') 
+    return citel.reply('This comand can not use in group😪.') 
  }
   });
 //-------------------------------------------------------------------------------------
