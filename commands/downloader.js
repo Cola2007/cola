@@ -79,7 +79,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
                 fileName: result.title+`.mp4`, 
                 caption :"     *FACEBOOK DOWNLOADER* "
             } 
-         Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+         return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
         }
         else{
             let buttonMessage = { 
@@ -88,7 +88,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
                 fileName: result.title+`.mp4`, 
                 caption :"     *FACEBOOK DOWNLOADER* "
             } 
-         Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
+        return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
         }
 			   
     } catch (error) {
@@ -113,9 +113,15 @@ if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*
 const { TiktokDL } = require("@tobyg74/tiktok-api-dl")
 
 let result = TiktokDL(text)
-
-  return await Void.sendMessage(citel.chat, video : { url : result.result?.video?}, caption: "POWERD BY BLUE-LION" } , { quoted : citel })
-    
+            let buttonMessage = {  
+                 video: {url:result.result?.video?},  
+                 mimetype: 'video/mp4',  
+                 fileName: result.title+`.mp4`,  
+                 caption :"     *POWERD BY BLUE-LION* " 
+             }  
+          return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+         
+  
 })
 
      //--------------------------------------------------------------------------- 
