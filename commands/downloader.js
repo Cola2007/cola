@@ -162,7 +162,7 @@ const getRandom = (ext) => {
      let randomName = getRandom(".mp3"); 
 let resul = await TiktokDL(text)
             let buttonMessage = {  
-                 audio : {url:`${resul.result.music}`},  
+                 document: {url:`${resul.result.music}`},  
                  mimetype: 'audio/mpeg',  
                  fileName: `${randomName}`,  
                  caption :`*TIKTOK VIDEO DOWNLOADER*
