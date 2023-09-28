@@ -115,7 +115,7 @@ const getRandom = (ext) => {
                      return `${Math.floor(Math.random() * 10000)}${ext}`; 
                  };
      let randomName = getRandom(".mp4"); 
-let resul = TiktokDL(text)
+let resul = await TiktokDL(text)
             let buttonMessage = {  
                  video: {url:`${resul.result.video}`},  
                  mimetype: 'video/mp4',  
