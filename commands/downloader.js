@@ -86,7 +86,7 @@ const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pintere
                 video: {url:result.hd}, 
                 mimetype: 'video/mp4', 
                 fileName: result.title+`.mp4`, 
-                caption :"     *FACEBOOK DOWNLOADER* "
+                caption :"*FACEBOOK DOWNLOADER* "
             } 
         return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel });
         }
@@ -226,6 +226,12 @@ cmd({
    if (!citel.isGroup) {
     if (!text) return citel.reply(`Enter Url`)
         if (!text.includes('xnxx.com')) return citel.reply(`Enter an xnxx link`)
+        Void.sendMessage(citel.chat, {  
+            react: {  
+                text: "🥶",  
+                key: citel.key  
+            }  
+        })
         const fg = require('api-dylux')
         let xn = await fg.xnxxdl(text)
         let cap =`🥶  *XNXX DL*
@@ -259,7 +265,7 @@ cmd({
     use: '<option>',
   }, async(Void,citel,text) => {
    if (!citel.isGroup) {
-    if (!text) return citel.reply(`Enter Url`)
+    if (!text) return citel.reply(`Enter text`)
     const fg = require('api-dylux')
 	let res = await fg.xnxxSearch(text)
             let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
@@ -278,6 +284,12 @@ cmd({
    category: 'downloader', 
    use:'<does this>', 
  }, async(Void,citel,text) => { 
+    Void.sendMessage(citel.chat, {  
+        react: {  
+            text: "⬇️",  
+            key: citel.key  
+        }  
+    })
  const args = text; 
  let search1 = await apks.search(args); 
  const id1 = search1[0].id ; 
@@ -318,6 +330,12 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
     category: 'downloader', 
     use:'<does this>', 
   }, async(Void,citel,text) => { 
+    Void.sendMessage(citel.chat, {  
+        react: {  
+            text: "♻️",  
+            key: citel.key  
+        }  
+    })
     if (!text) return citel.reply('Please Enter the Google Drive link.') 
     const dg = require('api-dylux')
     let res = await dg.GDriveDl(text)
@@ -485,64 +503,6 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
          } 
      ) 
      //--------------------------------------------------------------------------- 
- cmd({ 
-             pattern: "ringtone", 
-             desc: "Downloads ringtone.", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<ringtone name>', 
-         }, 
-         async(Void, citel, text) => { 
-             if (!text) return citel.reply(`Example: ${prefix}ringtone back in black`) 
-             let anu = await ringtone(text) 
-             let result = anu[Math.floor(Math.random() * anu.length)] 
-             return Void.sendMessage(citel.chat, { audio: { url: result.audio }, fileName: result.title + '.mp3', mimetype: 'audio/mpeg' }, { quoted: citel }) 
-         } 
-     ) 
-     //--------------------------------------------------------------------------- 
- cmd({ 
-             pattern: "pint", 
-             desc: "Downloads image from pinterest.", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<text|image name>', 
-         }, 
-         async(Void, citel, text) => { 
-             if (!text) return reply("What picture are you looking for?") && Void.sendMessage(citel.chat, { 
-                 react: { 
-                     text: '❌', 
-                     key: citel.key 
-                 } 
-             }) 
-             try { 
-                 anu = await pinterest(text) 
-                 result = anu[Math.floor(Math.random() * anu.length)] 
-                 let buttonMessage = { 
-                     image: { 
-                         url: result 
-                     }, 
-                     caption: ` `, 
-                     footer: tlang().footer, 
-                     headerType: 4, 
-                     contextInfo: { 
-                         externalAdReply: { 
-                             title: `Here it is✨`, 
-                             body: `${Config.ownername}`, 
-                             thumbnail: log0, 
-                             mediaType: 2, 
-                             mediaUrl: ``, 
-                             sourceUrl: `` 
-                         } 
-                     } 
-                 } 
-                 return Void.sendMessage(citel.chat, buttonMessage, { 
-                     quoted: citel 
-                 }) 
-             } catch (e) { 
-                 console.log(e) 
-             } 
-         }) 
-     //--------------------------------------------------------------------------- 
      cmd({ 
              pattern: "mediafire", 
              desc: "Downloads apps.", 
@@ -553,12 +513,12 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
          async(Void, citel, text) => { 
              if (!text) return citel.reply(`Give app name`); 
              const baby1 = await mediafire(text); 
-             if (baby1[0].size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1)); 
+             if (baby1.size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1)); 
              const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ* 
- *Nᴀᴍᴇ* : ${baby1[0].nama} 
- *Sɪᴢᴇ* : ${baby1[0].size} 
- *Mɪᴍᴇ* : ${baby1[0].mime} 
- *Lɪɴᴋ* : ${baby1[0].link}`; 
+ *Nᴀᴍᴇ* : ${baby1.nama} 
+ *Sɪᴢᴇ* : ${baby1.size} 
+ *Mɪᴍᴇ* : ${baby1.mime} 
+ *Lɪɴᴋ* : ${baby1.link}`; 
              reply(`${result4}`); 
              return Void.sendMessage(citel.chat, { 
                      document: { 
