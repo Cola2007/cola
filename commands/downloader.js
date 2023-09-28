@@ -122,21 +122,21 @@ let resul = await TiktokDL(text)
                  fileName: `${randomName}`,  
                  caption :`*TIKTOK VIDEO DOWNLOADER*
 
-🤦‍♀️ username: ${resul.result.author.username}
-
-🕓 createTime: ${resul.result.createTime}
-
-🧨 playCount: ${resul.result.statistics.playCount}
-
-💕 downloadCount: ${resul.result.statistics.downloadCount}
-
-💫 shareCount: ${resul.result.statistics.shareCount}
-
-💌 commentCount: ${resul.result.statistics.commentCount}
-
-💝 likeCount: ${resul.result.statistics.likeCount}
-
-💘 favoriteCount: ${resul.result.statistics.favoriteCount}`
+🤦‍♀️ username: *${resul.result.author.username}*
+                 
+🕓 createTime: *${resul.result.createTime}*
+                                  
+🧨 playCount: *${resul.result.statistics.playCount}*
+                                  
+💕 downloadCount: *${resul.result.statistics.downloadCount}*
+                                  
+💫 shareCount: *${resul.result.statistics.shareCount}*
+                                  
+💌 commentCount: *${resul.result.statistics.commentCount}*
+                                  
+💝 likeCount: *${resul.result.statistics.likeCount}*
+                                  
+💘 favoriteCount: *${resul.result.statistics.favoriteCount}}*`
              }  
           return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
          
@@ -167,21 +167,21 @@ let resul = await TiktokDL(text)
                  fileName: `${randomName}`,  
                  caption :`*TIKTOK VIDEO DOWNLOADER*
 
-🤦‍♀️ username: ${resul.result.author.username}
+🤦‍♀️ username: *${resul.result.author.username}*
                  
-🕓 createTime: ${resul.result.createTime}
+🕓 createTime: *${resul.result.createTime}*
                  
-🧨 playCount: ${resul.result.statistics.playCount}
+🧨 playCount: *${resul.result.statistics.playCount}*
                  
- 💕 downloadCount: ${resul.result.statistics.downloadCount}
+💕 downloadCount: *${resul.result.statistics.downloadCount}*
                  
- 💫 shareCount: ${resul.result.statistics.shareCount}
+💫 shareCount: *${resul.result.statistics.shareCount}*
                  
-💌 commentCount: ${resul.result.statistics.commentCount}
+💌 commentCount: *${resul.result.statistics.commentCount}*
                  
-💝 likeCount: ${resul.result.statistics.likeCount}
+💝 likeCount: *${resul.result.statistics.likeCount}*
                  
-💘 favoriteCount: ${resul.result.statistics.favoriteCount}}`
+💘 favoriteCount: *${resul.result.statistics.favoriteCount}}*`
              }  
           return Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
          
