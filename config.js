@@ -33,6 +33,7 @@ const fs = require('fs-extra')
    disablepm:  process.env.DISABLE_PM === undefined ? false : process.env.DISABLE_PM, 
    levelupmessage:  process.env.LEVEL_UP_MESSAGE === undefined ? false : process.env.LEVEL_UP_MESSAGE, 
    antilink:  process.env.ANTILINK_VALUES === undefined ? 'chat.whatsapp.com' : process.env.ANTILINK_VALUES, 
+   onlygroup: process.env.ONLY_GROUP === undefined ? 'false' : process.env.ONLY_GROUP,
    antilinkaction: process.env.ANTILINK_ACTION === undefined ? 'remove' : process.env.ANTILINK_ACTION, 
    BRANCH: 'main',  
    ALIVE_MESSAGE:  process.env.ALIVE_MESSAGE === undefined ? '' : process.env.ALIVE_MESSAGE, 
