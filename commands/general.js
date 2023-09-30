@@ -13,8 +13,6 @@ const { tlang, botpic, cmd, prefix, runtime, Config , sleep } = require('../lib'
 const axios = require('axios')
 const speed = require('performance-now')
 const fetch = require('node-fetch');
-const { Configuration, OpenAIApi } = require("openai");
-const openai = require("@sl-code-lords/openai-chatgpt")
 
    
 //---------------------------------------------------------------------------
@@ -28,19 +26,27 @@ cmd({
     filename: __filename,
 },
 async(Void, citel,text) => {
-    if (Config.OPENAI_API_KEY=='') return citel.reply('You Dont Have OPENAI_API_KEY \nPlease Create OPEN API KEY from Given Link \nhttps://platform.openai.com/account/api-keys');
  try {
- var res= await openai.chatgpt({api_key:Config.OPENAI_API_KEY, message:text})
+ var res= axios(`https://vihangayt.me/tools/chatgpt?q=${text}`)
  console.log(res.result.message);
-citel.reply(`${res.result.message}`);
+citel.reply(`${res.data}`);
 } catch (error) {
 console.log(error);
 citel.reply("Sorry, there seems to be an error.");
 }
-  
 }
 )
-
+//---------------------------------------------------------------------------
+cmd({
+    pattern: 'art',
+    alias :['gptart','aiart'],
+    desc: 'create a ai art',
+    category: 'AI',
+    use:'<does this>',
+  }, async(Void,citel,text) => {
+    let uu = Config.sessionName.replace(/ /g, "%20");
+  await Void.sendMessage(citel.chat,{image:{url: `https://vihangayt.me/tools/midjourney?q=${uu}`}, caption: `${text}`}) 
+  });
 //---------------------------------------------------------------------------
 cmd({
         pattern: "repo",
