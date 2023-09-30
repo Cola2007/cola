@@ -44,7 +44,7 @@ cmd({
     category: 'AI',
     use:'<does this>',
   }, async(Void,citel,text) => {
-    let uu = Config.sessionName.replace(/ /g, "%20");
+    let uu = text.replace(/ /g, "%20");
   await Void.sendMessage(citel.chat,{image:{url: `https://vihangayt.me/tools/midjourney?q=${uu}`}, caption: `${text}`}) 
   });
 //---------------------------------------------------------------------------
