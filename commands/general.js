@@ -27,7 +27,7 @@ cmd({
 },
 async(Void, citel,text) => {
  try {
- var res= axios(`https://vihangayt.me/tools/chatgpt?q=${text}`)
+ var res= await axios.get(`https://vihangayt.me/tools/chatgpt?q=${text}`)
  console.log(res.result.message);
 citel.reply(`${res.data}`);
 } catch (error) {

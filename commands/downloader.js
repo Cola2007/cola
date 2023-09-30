@@ -561,27 +561,26 @@ await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
      //--------------------------------------------------------------------------- 
      cmd({ 
              pattern: "mediafire", 
-             desc: "Downloads apps.", 
+             desc: "Downloads file from mediafire.", 
              category: "downloader", 
              filename: __filename, 
              use: '<url of mediafire>', 
          }, 
          async(Void, citel, text) => { 
-             if (!text) return citel.reply(`Give app name`); 
-             const baby1 = await mediafire(text); 
-             if (baby1.size.split("MB")[0] >= 999) return reply("*File Over Limit* " + util.format(baby1)); 
+             if (!text) return citel.reply(`Give link`); 
+             let baby1 = await axios.get(`https://vihangayt.me/download/mediafire?url=${text}`); 
              const result4 = `*Mᴇᴅɪᴀғɪʀᴇ Dᴏᴡɴʟᴏᴀᴅᴇʀ* 
- *Nᴀᴍᴇ* : ${baby1.nama} 
- *Sɪᴢᴇ* : ${baby1.size} 
- *Mɪᴍᴇ* : ${baby1.mime} 
- *Lɪɴᴋ* : ${baby1.link}`; 
+ *Nᴀᴍᴇ* : ${baby1.data.name} 
+ *Sɪᴢᴇ* : ${baby1.data.size} 
+ *Mɪᴍᴇ* : ${baby1.data.mime} 
+ *Lɪɴᴋ* : ${baby1.data.link}`; 
              reply(`${result4}`); 
              return Void.sendMessage(citel.chat, { 
                      document: { 
-                         url: baby1[0].link, 
+                         url: baby1.data.link, 
                      }, 
-                     fileName: baby1[0].nama, 
-                     mimetype: baby1[0].mime, 
+                     fileName: baby1.data.name, 
+                     mimetype: baby1.data.mime, 
                  }, { 
                      quoted: citel, 
                  }) 
