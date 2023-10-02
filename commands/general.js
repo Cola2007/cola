@@ -26,8 +26,9 @@ cmd({
     filename: __filename,
 },
 async(Void, citel,text) => {
+let uu = text.replace(/ /g, "%20");
  try {
- var res = await axios.get(`https://vihangayt.me/tools/chatgpt?q=${text}`)
+ var res = await axios.get(`https://vihangayt.me/tools/chatgpt?q=${uu}`)
 citel.reply(`${res.data}`);
 } catch (error) {
 console.log(error);
