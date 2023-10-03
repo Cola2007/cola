@@ -29,7 +29,7 @@ async(Void, citel,text) => {
 
  try {
 let uu = text.replace(/ /g, "%20");
-let res = await axios.get('https://vihangayt.me/tools/chatgpt?q='+uu)
+let res = await axios.get(`https://vihangayt.me/tools/chatgpt?q=${uu}`)
 citel.reply(res.data);
 } catch (error) {
 console.log(error);
